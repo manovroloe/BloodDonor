@@ -1,0 +1,35 @@
+BLOODCARE WEBSITE - v23
+======================
+This remains a website. It is not a desktop application.
+
+UPDATING YOUR EXISTING WORKING v22 COPY
+1. Extract this ZIP into a NEW folder. Keep your old working v22 folder for rollback.
+2. Copy your existing private .env from v22 into this folder next to run.py.
+   Do not put .env inside client/ and do not share it publicly.
+3. On the developer/server computer, run setup.bat ONCE (Windows).
+   Python 3.12 or 3.13 must be installed on that computer.
+4. Run start.bat whenever you need to start the local website.
+5. Open http://127.0.0.1:8000 in a browser, unless your existing PORT differs.
+
+macOS/Linux: use ./setup.sh once, then ./start.sh.
+Normal startup does NOT install or upgrade requirements.
+
+PUBLIC WEBSITE
+Host this project on one always-on server with HTTPS. Visitors only open its link.
+See docs/DEPLOYMENT.md. Docker configuration is included as an optional server setup.
+The ZIP itself does not publish the website or configure a domain.
+
+YOUR DATABASE
+No Supabase migration is required for this cleanup.
+Do not rerun schema.sql or upgrade.sql on an existing working v22 database.
+Both SQL files are unchanged, and startup never applies SQL automatically.
+
+PRIVATE SETTINGS
+Real keys/passwords are deliberately NOT included. Reuse your existing .env privately,
+or copy .env.example to .env and fill it in. Setup never overwrites an existing .env.
+Rotate credentials that were shared beyond your trusted development team.
+
+CHECKS
+Run check.bat (Windows) or ./check.sh (macOS/Linux) after setup.
+These tests use mock services and do not touch your live Supabase data or send email.
+See docs/VERIFICATION.md for what was tested and what still needs a live deployment check.

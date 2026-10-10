@@ -1,0 +1,11 @@
+*
+!requirements.txt
+!run.py
+!server/
+!server/**
+!client/
+!client/**
+**/__pycache__/
+**/*.pyc
+**/.env
+**/.env.*

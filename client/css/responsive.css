@@ -1,0 +1,599 @@
+@media (max-width: 900px) {
+
+    .hero {
+        min-height: 650px;
+
+        background-position: left center;
+    }
+
+    .hero-container {
+        justify-content: center;
+
+        padding: 40px 20px;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 520px;
+
+        text-align: center;
+
+        padding: 35px 25px;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-info {
+        justify-content: center;
+    }
+}
+@media (max-width: 500px) {
+
+    .hero {
+        min-height: 700px;
+
+        background-position: left center;
+    }
+
+    .hero-container {
+        padding: 30px 15px;
+    }
+
+    .hero-content {
+        padding: 30px 20px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+
+        box-sizing: border-box;
+
+        text-align: center;
+    }
+
+    .hero-info {
+        gap: 20px;
+    }
+}
+/* =========================
+   FEATURES RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .features {
+        padding: 70px 20px;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .features {
+        padding: 60px 15px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .feature-card {
+        padding: 25px;
+    }
+}
+/* =========================
+   BLOOD TYPES RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .blood-types {
+        padding: 70px 20px;
+    }
+
+    .blood-types-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .blood-types {
+        padding: 60px 15px;
+    }
+
+    .blood-types-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 12px;
+    }
+
+    .blood-type-card {
+        padding: 20px 10px;
+    }
+
+    .blood-type-card h3 {
+        font-size: 24px;
+    }
+
+}
+/* =========================================
+   REGISTRATION RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .register-page {
+        padding: 25px 15px;
+    }
+
+    .register-card {
+        padding: 35px 25px;
+
+        border-radius: 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .register-heading h2 {
+        font-size: 23px;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .register-card {
+        padding: 30px 20px;
+    }
+
+    .register-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 26px;
+    }
+
+    .register-header h1 {
+        font-size: 24px;
+    }
+
+    .register-heading h2 {
+        font-size: 21px;
+    }
+}
+.create-account {
+    text-align: center;
+    margin-top: 22px;
+}
+
+.create-account p {
+    display: inline;
+    margin: 0;
+    color: #777;
+    font-size: 12px;
+}
+
+.create-account a {
+    margin-left: 5px;
+    color: #c62828;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.create-account a:hover {
+    text-decoration: underline;
+}
+/* =========================================
+   DONATION RECORDS RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+    .donation-nav-links {
+        gap: 12px;
+    }
+    .donation-nav-links a {
+        font-size: 10px;
+    }
+    .donation-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 750px) {
+    .donation-nav-links {
+        display: none;
+    }
+    .donation-main {
+        padding: 100px 15px 35px;
+    }
+    .donation-card {
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+    .donation-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .donation-heading h1 {
+        font-size: 29px;
+    }
+    .add-donation-btn {
+        width: 100%;
+    }
+    .donation-tools {
+        align-items: stretch;
+        flex-direction: column;
+    }
+    .search-box,
+    .donation-filter {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .donation-nav-container {
+        padding: 0 15px;
+    }
+    .donation-logo {
+        font-size: 17px;
+    }
+    .donation-summary {
+        grid-template-columns: 1fr;
+    }
+    .donation-card {
+        padding: 25px 15px;
+    }
+    .donation-pagination {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+/* =========================================
+   INVENTORY RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .inventory-nav-links {
+        gap: 12px;
+    }
+
+    .inventory-nav-links a {
+        font-size: 10px;
+    }
+
+    .inventory-blood-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .inventory-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .inventory-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .add-inventory-btn {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    .inventory-nav-links {
+        display: none;
+    }
+
+    .inventory-main {
+        padding: 100px 15px 35px;
+    }
+
+    .inventory-card {
+        padding: 25px 20px;
+
+        border-radius: 20px;
+    }
+
+    .inventory-heading h1 {
+        font-size: 29px;
+    }
+
+    .inventory-table-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .inventory-search {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .inventory-nav-container {
+        padding: 0 15px;
+    }
+
+    .inventory-logo {
+        font-size: 17px;
+    }
+
+    .inventory-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .inventory-blood-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .inventory-card {
+        padding: 25px 15px;
+    }
+}
+/* =========================================
+   BLOOD REQUEST RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .request-nav-links {
+        gap: 12px;
+    }
+
+    .request-nav-links a {
+        font-size: 10px;
+    }
+
+    .request-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    .request-nav-links {
+        display: none;
+    }
+
+    .request-main {
+        padding: 100px 15px 35px;
+    }
+
+    .request-card {
+        padding: 25px 20px;
+
+        border-radius: 20px;
+    }
+
+    .request-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .request-heading h1 {
+        font-size: 29px;
+    }
+
+    .add-request-btn {
+        width: 100%;
+    }
+
+    .request-tools {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .request-search,
+    .request-filter {
+        width: 100%;
+    }
+
+    .request-pagination {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .modal-form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .request-nav-container {
+        padding: 0 15px;
+    }
+
+    .request-logo {
+        font-size: 17px;
+    }
+
+    .request-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .request-card {
+        padding: 25px 15px;
+    }
+
+    .request-modal-card {
+        padding: 25px 20px;
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+    }
+
+    .cancel-btn,
+    .submit-request-btn {
+        width: 100%;
+    }
+}
+/* =========================================
+   APPOINTMENT RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .appointment-nav-links {
+        gap: 10px;
+    }
+
+    .appointment-nav-links a {
+        font-size: 10px;
+    }
+
+    .appointment-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    .appointment-nav-links {
+        display: none;
+    }
+
+    .appointment-main {
+        padding: 100px 15px 35px;
+    }
+
+    .appointment-card {
+        padding: 25px 20px;
+
+        border-radius: 20px;
+    }
+
+    .appointment-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .appointment-heading h1 {
+        font-size: 29px;
+    }
+
+    .add-appointment-btn {
+        width: 100%;
+    }
+
+    .appointment-tools {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .appointment-search,
+    .appointment-filter {
+        width: 100%;
+    }
+
+    .appointment-pagination {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .appointment-form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .appointment-nav-container {
+        padding: 0 15px;
+    }
+
+    .appointment-logo {
+        font-size: 17px;
+    }
+
+    .appointment-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .appointment-card {
+        padding: 25px 15px;
+    }
+
+    .appointment-modal-card {
+        padding: 25px 20px;
+    }
+
+    .appointment-modal-buttons {
+        flex-direction: column;
+    }
+
+    .appointment-cancel-btn,
+    .appointment-submit-btn {
+        width: 100%;
+    }
+}

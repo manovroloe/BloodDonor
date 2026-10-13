@@ -1,0 +1,1325 @@
+/* =========================================================
+   BloodCare Preview Theme
+   Light: clean clinical white + wine/crimson accents
+   Dark: near-black burgundy with warm rose highlights
+   Loaded after style.css/responsive.css so it safely overrides
+   older palette rules without changing application logic.
+   ========================================================= */
+
+:root {
+  --wine-950:#3a0b16;
+  --wine-900:#4b1020;
+  --wine-800:#65152a;
+  --wine-700:#7f1d32;
+  --wine-600:#9f1239;
+  --wine-500:#b91c1c;
+  --rose-500:#e11d48;
+  --wine-100:#ffe9ee;
+  --wine-050:#fff7f9;
+
+  --bc-bg:#ffffff;
+  --bc-surface:#ffffff;
+  --bc-surface-soft:#fff7f8;
+  --bc-surface-strong:#fff1f2;
+  --bc-text:#2f2023;
+  --bc-muted:#725e63;
+  --bc-border:#eadfe1;
+  --bc-accent:#b91c1c;
+  --bc-accent-2:#e11d48;
+  --bc-accent-dark:#7f1d1d;
+  --bc-shadow:0 18px 48px rgba(72,24,34,.09);
+  --bc-shadow-hover:0 24px 58px rgba(72,24,34,.14);
+}
+
+html[data-theme="light"] body.public-v3,
+html[data-theme="light"] .about-section,
+html[data-theme="light"] .path-section,
+html[data-theme="light"] .inventory-section,
+html[data-theme="light"] .home-public-feeds,
+html[data-theme="light"] .public-v3 .section-block {
+  background:#fff !important;
+  color:var(--bc-text);
+}
+
+html[data-theme="light"] .public-v3 .navbar {
+  background:rgba(255,255,255,.90) !important;
+  border-color:#eadfe1 !important;
+  box-shadow:0 10px 30px rgba(72,24,34,.07);
+}
+
+/* Preview-style navigation */
+.v3-nav .nav-links { gap:19px; }
+.v3-nav .nav-links a,
+.nav-contact-link {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:38px;
+  border:1px solid transparent;
+  border-radius:10px;
+  padding:8px 10px;
+  color:#3e2a2e;
+  background:transparent;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+  cursor:pointer;
+  font-family:inherit;
+  transition:background-color .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;
+}
+
+html[data-theme="light"] .v3-nav .nav-links a:hover,
+html[data-theme="light"] .v3-nav .nav-links a.active,
+html[data-theme="light"] .nav-contact-link:hover {
+  background:var(--wine-800) !important;
+  color:#fff !important;
+  border-color:var(--wine-800) !important;
+  transform:translateY(-1px);
+}
+
+html[data-theme="light"] .profile-btn:hover,
+html[data-theme="light"] .theme-toggle:hover {
+  background:var(--wine-800) !important;
+  color:#fff !important;
+  border-color:var(--wine-800) !important;
+}
+
+/* Preview card hover behavior: wine in light mode. */
+html[data-theme="light"] .path-card:hover,
+html[data-theme="light"] .mini-card:hover,
+html[data-theme="light"] .facility-card:hover,
+html[data-theme="light"] .blood-chip:hover,
+html[data-theme="light"] .feed-card:hover {
+  background:var(--wine-800) !important;
+  color:#fff !important;
+  border-color:var(--wine-700) !important;
+  transform:translateY(-4px);
+  box-shadow:0 22px 46px rgba(101,21,42,.20) !important;
+}
+
+html[data-theme="light"] .path-card:hover h3,
+html[data-theme="light"] .path-card:hover p,
+html[data-theme="light"] .path-card:hover small,
+html[data-theme="light"] .path-card:hover b,
+html[data-theme="light"] .mini-card:hover h3,
+html[data-theme="light"] .mini-card:hover p,
+html[data-theme="light"] .facility-card:hover h3,
+html[data-theme="light"] .facility-card:hover p,
+html[data-theme="light"] .facility-card:hover small,
+html[data-theme="light"] .blood-chip:hover b,
+html[data-theme="light"] .blood-chip:hover span,
+html[data-theme="light"] .feed-card:hover h3,
+html[data-theme="light"] .feed-card:hover p,
+html[data-theme="light"] .feed-card:hover small {
+  color:#fff !important;
+}
+
+html[data-theme="light"] .path-card:hover .path-icon {
+  background:#fff !important;
+  color:var(--wine-800) !important;
+}
+
+/* Preserve the preview's wine panels and red accents. */
+.mvg-panels {
+  background:linear-gradient(145deg,#8f1727 0%,#b91c1c 60%,#7f1d1d 100%) !important;
+}
+
+.primary-btn,
+.btn-primary,
+.path-cta,
+.small-btn,
+.login-submit {
+  background:#b91c1c !important;
+  color:#fff !important;
+  border-color:#b91c1c !important;
+}
+
+.primary-btn:hover:not(:disabled),
+.btn-primary:hover,
+.path-cta:hover,
+.small-btn:hover:not(:disabled),
+.login-submit:hover {
+  background:#7f1d32 !important;
+  border-color:#7f1d32 !important;
+  color:#fff !important;
+}
+
+.text-link { color:#9f1239; }
+.text-link:hover { color:#65152a; }
+
+/* =========================================================
+   DARK MODE — very dark red, almost black
+   ========================================================= */
+html[data-theme="dark"] {
+  --red:#f16f7b;
+  --red2:#fb7185;
+  --ink:#f8edf0;
+  --muted:#c2aeb3;
+  --line:#493238;
+  --card:rgba(32,21,25,.97);
+  --soft:#1a1114;
+
+  --bc-bg:#130d0f;
+  --bc-surface:#201519;
+  --bc-surface-soft:#28191d;
+  --bc-surface-strong:#351c22;
+  --bc-text:#f8edf0;
+  --bc-muted:#c2aeb3;
+  --bc-border:#493238;
+  --bc-accent:#f16f7b;
+  --bc-accent-2:#fb7185;
+  --bc-accent-dark:#fecdd3;
+  --bc-shadow:0 18px 48px rgba(0,0,0,.30);
+  --bc-shadow-hover:0 26px 60px rgba(0,0,0,.42);
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] body.public-v3,
+html[data-theme="dark"] .hero.hero-v3,
+html[data-theme="dark"] .about-section,
+html[data-theme="dark"] .path-section,
+html[data-theme="dark"] .inventory-section,
+html[data-theme="dark"] .home-public-feeds,
+html[data-theme="dark"] .public-v3 .section-block {
+  background:#130d0f !important;
+  color:#f8edf0 !important;
+}
+
+html[data-theme="dark"] .public-v3 .navbar,
+html[data-theme="dark"] .navbar {
+  background:rgba(19,13,15,.96) !important;
+  border-color:#3b282e !important;
+  box-shadow:0 10px 32px rgba(0,0,0,.34) !important;
+}
+
+html[data-theme="dark"] .v3-nav .logo,
+html[data-theme="dark"] .v3-nav .nav-links a,
+html[data-theme="dark"] .nav-contact-link {
+  color:#ead9dd !important;
+}
+
+/* Dark mode is inverse: light hover + dark wine text. */
+html[data-theme="dark"] .v3-nav .nav-links a:hover,
+html[data-theme="dark"] .v3-nav .nav-links a.active,
+html[data-theme="dark"] .nav-contact-link:hover,
+html[data-theme="dark"] .profile-btn:hover,
+html[data-theme="dark"] .theme-toggle:hover {
+  background:#fff4f6 !important;
+  color:#65152a !important;
+  border-color:#fff4f6 !important;
+}
+
+html[data-theme="dark"] .profile-btn,
+html[data-theme="dark"] .theme-toggle {
+  background:#28191d !important;
+  color:#f9a8b4 !important;
+  border-color:#53313a !important;
+}
+
+html[data-theme="dark"] .hero-v3 .hero-copy h1,
+html[data-theme="dark"] .public-v3 .section-head h2,
+html[data-theme="dark"] .mvg-intro h2,
+html[data-theme="dark"] .page-title h1,
+html[data-theme="dark"] .path-card h3,
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3 {
+  color:#f8edf0 !important;
+}
+
+html[data-theme="dark"] .hero-v3 .hero-copy>p,
+html[data-theme="dark"] .path-card>p,
+html[data-theme="dark"] .page-title p,
+html[data-theme="dark"] .muted-text,
+html[data-theme="dark"] .metric span {
+  color:#c2aeb3 !important;
+}
+
+html[data-theme="dark"] .hero-heart-svg>circle {
+  fill:#29191e !important;
+  opacity:.88 !important;
+}
+
+html[data-theme="dark"] .hero-float,
+html[data-theme="dark"] .hero-metrics-v3,
+html[data-theme="dark"] .mvg-experience,
+html[data-theme="dark"] .glass-card,
+html[data-theme="dark"] .panel,
+html[data-theme="dark"] .mini-card,
+html[data-theme="dark"] .path-card,
+html[data-theme="dark"] .feed-card,
+html[data-theme="dark"] .facility-card,
+html[data-theme="dark"] .blood-chip,
+html[data-theme="dark"] .metric,
+html[data-theme="dark"] .result-card,
+html[data-theme="dark"] .stock-facility-card,
+html[data-theme="dark"] .non-donor-card {
+  background:#201519 !important;
+  border-color:#493238 !important;
+  color:#f8edf0 !important;
+  box-shadow:var(--bc-shadow);
+}
+
+html[data-theme="dark"] .path-card:hover,
+html[data-theme="dark"] .mini-card:hover,
+html[data-theme="dark"] .facility-card:hover,
+html[data-theme="dark"] .blood-chip:hover,
+html[data-theme="dark"] .feed-card:hover {
+  background:#fff4f6 !important;
+  color:#65152a !important;
+  border-color:#fff4f6 !important;
+  transform:translateY(-4px);
+  box-shadow:var(--bc-shadow-hover) !important;
+}
+
+html[data-theme="dark"] .path-card:hover h3,
+html[data-theme="dark"] .path-card:hover p,
+html[data-theme="dark"] .path-card:hover small,
+html[data-theme="dark"] .path-card:hover b,
+html[data-theme="dark"] .mini-card:hover h3,
+html[data-theme="dark"] .mini-card:hover p,
+html[data-theme="dark"] .facility-card:hover h3,
+html[data-theme="dark"] .facility-card:hover p,
+html[data-theme="dark"] .facility-card:hover small,
+html[data-theme="dark"] .blood-chip:hover b,
+html[data-theme="dark"] .blood-chip:hover span,
+html[data-theme="dark"] .feed-card:hover h3,
+html[data-theme="dark"] .feed-card:hover p,
+html[data-theme="dark"] .feed-card:hover small {
+  color:#65152a !important;
+}
+
+html[data-theme="dark"] .path-card:hover .path-icon {
+  background:#65152a !important;
+  color:#fff !important;
+}
+
+html[data-theme="dark"] .mvg-mini-stats span,
+html[data-theme="dark"] .mvg-tab,
+html[data-theme="dark"] .mvg-tab-icon {
+  background:#201519 !important;
+  color:#ead9dd !important;
+  border-color:#493238 !important;
+}
+
+html[data-theme="dark"] .mvg-tab:hover,
+html[data-theme="dark"] .mvg-tab.active,
+html[data-theme="dark"] .feed-tab:hover,
+html[data-theme="dark"] .feed-tab.active,
+html[data-theme="dark"] .login-tab:hover,
+html[data-theme="dark"] .login-tab.active {
+  background:#fff4f6 !important;
+  color:#65152a !important;
+  border-color:#fff4f6 !important;
+}
+
+html[data-theme="dark"] .mvg-panels {
+  background:linear-gradient(145deg,#351c22 0%,#65152a 58%,#2a1218 100%) !important;
+}
+
+html[data-theme="dark"] .form-group input,
+html[data-theme="dark"] .form-group select,
+html[data-theme="dark"] .form-group textarea,
+html[data-theme="dark"] .toolbar input,
+html[data-theme="dark"] .toolbar select,
+html[data-theme="dark"] .feed-toolbar input,
+html[data-theme="dark"] .quiz-input-group input,
+html[data-theme="dark"] .quiz-input-group textarea,
+html[data-theme="dark"] .quiz-choice span,
+html[data-theme="dark"] input,
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea {
+  background:#1a1114 !important;
+  color:#f8edf0 !important;
+  border-color:#493238 !important;
+}
+
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder { color:#8f7b80 !important; }
+
+html[data-theme="dark"] .feed-tabs,
+html[data-theme="dark"] .login-tabs {
+  background:#1a1114 !important;
+  border-color:#493238 !important;
+}
+
+html[data-theme="dark"] .feed-tab,
+html[data-theme="dark"] .login-tab { color:#c9b5ba !important; }
+
+html[data-theme="dark"] .table-wrap { border-color:#493238 !important; }
+html[data-theme="dark"] table,
+html[data-theme="dark"] th,
+html[data-theme="dark"] td {
+  background:#201519 !important;
+  color:#ead9dd !important;
+  border-color:#3d2a2f !important;
+}
+html[data-theme="dark"] th { background:#2a1a1f !important; color:#f8edf0 !important; }
+
+html[data-theme="dark"] .tag,
+html[data-theme="dark"] .pill,
+html[data-theme="dark"] .status {
+  background:#351c22 !important;
+  color:#f9a8b4 !important;
+}
+
+html[data-theme="dark"] .feed-details p,
+html[data-theme="dark"] .status-timeline { background:#1a1114 !important; }
+html[data-theme="dark"] .event-feed-details,
+html[data-theme="dark"] .status-timeline,
+html[data-theme="dark"] .tracking-card { border-color:#493238 !important; }
+
+html[data-theme="dark"] .primary-btn,
+html[data-theme="dark"] .btn-primary,
+html[data-theme="dark"] .path-cta,
+html[data-theme="dark"] .small-btn,
+html[data-theme="dark"] .login-submit {
+  background:#7f1d32 !important;
+  color:#fff !important;
+  border-color:#7f1d32 !important;
+}
+
+html[data-theme="dark"] .primary-btn:hover:not(:disabled),
+html[data-theme="dark"] .btn-primary:hover,
+html[data-theme="dark"] .path-cta:hover,
+html[data-theme="dark"] .small-btn:hover:not(:disabled),
+html[data-theme="dark"] .login-submit:hover {
+  background:#fff4f6 !important;
+  color:#65152a !important;
+  border-color:#fff4f6 !important;
+}
+
+html[data-theme="dark"] .secondary-btn,
+html[data-theme="dark"] .btn-secondary {
+  background:transparent !important;
+  color:#f9a8b4 !important;
+  border-color:#7b3c49 !important;
+}
+html[data-theme="dark"] .secondary-btn:hover,
+html[data-theme="dark"] .btn-secondary:hover {
+  background:#fff4f6 !important;
+  color:#65152a !important;
+  border-color:#fff4f6 !important;
+}
+
+html[data-theme="dark"] .text-link { color:#f9a8b4 !important; }
+html[data-theme="dark"] .text-link:hover {
+  background:#fff4f6 !important;
+  color:#65152a !important;
+  padding-left:10px;
+  padding-right:10px;
+  border-radius:9px;
+}
+
+html[data-theme="dark"] .site-footer {
+  background:#0e090b !important;
+  border-color:#2a1a1f !important;
+}
+html[data-theme="dark"] .site-footer p { color:#bba7ac !important; }
+html[data-theme="dark"] .site-footer a { color:#f5b8c1 !important; }
+html[data-theme="dark"] .v3-nav .nav-links.open {
+  background:#201519 !important;
+  border:1px solid #493238 !important;
+}
+
+/* Login stays visually related to the preview while using the older markup. */
+html[data-theme="light"] .login-page {
+  background:linear-gradient(135deg,#fff7f9 0%,#ffe9ee 55%,#f8d7df 100%) !important;
+}
+html[data-theme="light"] .login-card {
+  background:rgba(255,255,255,.94) !important;
+  border-color:#ecd7dd !important;
+  box-shadow:0 28px 80px rgba(91,19,40,.16) !important;
+}
+html[data-theme="light"] .login-logo h1 { color:#65152a !important; }
+html[data-theme="light"] .login-icon { background:#fff0f3 !important; color:#7f1d32 !important; }
+
+html[data-theme="dark"] .login-page {
+  background:linear-gradient(135deg,#0d090a 0%,#130d0f 48%,#241218 100%) !important;
+}
+html[data-theme="dark"] .login-card {
+  background:rgba(32,21,25,.97) !important;
+  border-color:#493238 !important;
+  color:#f8edf0 !important;
+  box-shadow:0 28px 80px rgba(0,0,0,.48) !important;
+}
+html[data-theme="dark"] .login-icon { background:#351c22 !important; color:#f9a8b4 !important; }
+html[data-theme="dark"] .login-logo h1,
+html[data-theme="dark"] .login-heading h2 { color:#f8edf0 !important; }
+html[data-theme="dark"] .login-heading p,
+html[data-theme="dark"] .login-logo p,
+html[data-theme="dark"] .login-note,
+html[data-theme="dark"] .remember { color:#c2aeb3 !important; }
+html[data-theme="dark"] .back-home a { color:#f9a8b4 !important; }
+
+/* Management dark mode follows the same near-black burgundy system. */
+html[data-theme="dark"] .staff-layout { background:#130d0f !important; color:#f8edf0 !important; }
+html[data-theme="dark"] .staff-main {
+  background:linear-gradient(180deg,#130d0f 0%,#181013 100%) !important;
+  color:#f8edf0 !important;
+}
+html[data-theme="dark"] .staff-side { background:#0d090a !important; color:#fff !important; }
+html[data-theme="dark"] .staff-side nav a { color:#cdb9be !important; }
+html[data-theme="dark"] .staff-side nav a:hover,
+html[data-theme="dark"] .staff-side nav a.active {
+  background:#fff4f6 !important;
+  color:#65152a !important;
+}
+html[data-theme="dark"] .staff-user { border-color:#ffffff18 !important; }
+html[data-theme="dark"] .staff-main .panel,
+html[data-theme="dark"] .staff-main .metric,
+html[data-theme="dark"] .staff-main .glass-card {
+  background:#201519 !important;
+  border-color:#493238 !important;
+  color:#f8edf0 !important;
+}
+html[data-theme="dark"] .staff-main table,
+html[data-theme="dark"] .staff-main th,
+html[data-theme="dark"] .staff-main td {
+  background:#201519 !important;
+  color:#ead9dd !important;
+  border-color:#3d2a2f !important;
+}
+html[data-theme="dark"] .staff-main th { background:#2a1a1f !important; }
+html[data-theme="dark"] .staff-main .table-wrap { border-color:#493238 !important; }
+html[data-theme="dark"] .staff-main input,
+html[data-theme="dark"] .staff-main select,
+html[data-theme="dark"] .staff-main textarea {
+  background:#1a1114 !important;
+  color:#f8edf0 !important;
+  border-color:#493238 !important;
+}
+html[data-theme="dark"] .staff-main .metric strong { color:#f9a8b4 !important; }
+
+/* Profile download / primary outline controls if present. */
+.profile-download-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  border:1px solid #7f1d32;
+  background:#fff;
+  color:#7f1d32;
+  border-radius:11px;
+  padding:10px 14px;
+  font-weight:700;
+  text-decoration:none;
+}
+.profile-download-btn:hover { background:#7f1d32; color:#fff; }
+html[data-theme="dark"] .profile-download-btn {
+  background:#201519 !important;
+  color:#f9a8b4 !important;
+  border-color:#7b3c49 !important;
+}
+html[data-theme="dark"] .profile-download-btn:hover {
+  background:#fff4f6 !important;
+  color:#65152a !important;
+  border-color:#fff4f6 !important;
+}
+
+@media(max-width:900px) {
+  .v3-nav .nav-links.open { border-radius:14px; }
+}
+
+
+/* Reliable clickable Sign Out controls */
+.profile-top-card { position:relative; isolation:isolate; }
+.profile-signout {
+  position:relative !important;
+  z-index:20 !important;
+  pointer-events:auto !important;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  cursor:pointer !important;
+}
+.profile-signout:hover {
+  background:#fff !important;
+  color:#7f1d32 !important;
+  border-color:#fff !important;
+}
+html[data-theme="dark"] .profile-signout:hover {
+  background:#fff4f6 !important;
+  color:#65152a !important;
+  border-color:#fff4f6 !important;
+}
+.staff-user .staff-signout {
+  position:relative !important;
+  z-index:20 !important;
+  pointer-events:auto !important;
+  display:inline-block;
+  margin-top:8px;
+  color:#ffb7b7 !important;
+  text-decoration:none;
+  cursor:pointer !important;
+}
+.staff-user .staff-signout:hover { color:#fff !important; text-decoration:underline; }
+
+
+/* Native, always-clickable logout controls */
+.profile-dashboard { position:relative; z-index:2; pointer-events:auto; }
+.profile-top-card { position:relative !important; z-index:3 !important; isolation:isolate; }
+.profile-top-card > * { position:relative; z-index:4; }
+.logout-form { margin:0; padding:0; position:relative !important; z-index:50 !important; pointer-events:auto !important; }
+.profile-signout-form { justify-self:end; }
+.profile-signout {
+  appearance:none; -webkit-appearance:none;
+  position:relative !important; z-index:51 !important;
+  pointer-events:auto !important; touch-action:manipulation;
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:38px; background:transparent; border:1px solid rgba(255,255,255,.34);
+  color:#fff; padding:9px 14px; border-radius:9px;
+  cursor:pointer !important; font:inherit; font-size:11px; font-weight:700;
+}
+.profile-signout:hover,.profile-signout:focus-visible { background:#fff !important; color:#7f1d32 !important; border-color:#fff !important; outline:none; }
+.profile-signout:disabled { opacity:.75; cursor:wait !important; }
+.staff-logout-form { margin-top:8px; }
+.staff-user .staff-signout {
+  appearance:none; -webkit-appearance:none; background:transparent; border:0; padding:0;
+  position:relative !important; z-index:51 !important; pointer-events:auto !important;
+  touch-action:manipulation; color:#ffb7b7 !important; cursor:pointer !important;
+  font:inherit; font-weight:600; text-decoration:none;
+}
+.staff-user .staff-signout:hover,.staff-user .staff-signout:focus-visible { color:#fff !important; text-decoration:underline; outline:none; }
+@media(max-width:600px){.profile-signout-form{grid-column:1/-1;justify-self:stretch}.profile-signout{width:100%}}
+
+/* =========================================================
+   Public Contact Modal
+   ========================================================= */
+body.contact-modal-open{overflow:hidden}
+.footer-contact-btn{margin-top:10px;border:1px solid rgba(255,255,255,.3);background:transparent;color:inherit;border-radius:10px;padding:9px 12px;font:inherit;font-size:12px;font-weight:700;cursor:pointer;transition:.2s ease}
+.footer-contact-btn:hover{background:#fff;color:#65152a;border-color:#fff}
+.contact-modal-backdrop{background:rgba(30,10,15,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:15000}
+.contact-modal-card{width:min(760px,100%);border:1px solid var(--bc-border);background:var(--bc-surface);color:var(--bc-text);padding:30px;border-radius:24px;box-shadow:0 34px 90px rgba(44,10,19,.34)}
+.contact-modal-heading{padding-right:52px;margin-bottom:22px}
+.contact-modal-heading h2{margin:7px 0 8px;font-size:28px;line-height:1.15;color:var(--bc-text)}
+.contact-modal-heading p{margin:0;color:var(--bc-muted);line-height:1.6;font-size:14px}
+.contact-modal-close{z-index:2}
+.contact-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.contact-form-grid .full{grid-column:1/-1}
+.contact-form-grid .form-group{margin:0}
+.contact-form-grid label{display:block;margin-bottom:7px;font-size:12px;font-weight:700;color:var(--bc-text)}
+.contact-form-grid input,.contact-form-grid select,.contact-form-grid textarea{width:100%;box-sizing:border-box;border:1px solid var(--bc-border);background:var(--bc-surface-soft);color:var(--bc-text);border-radius:11px;padding:12px 13px;font:inherit;outline:none;transition:border-color .2s ease,box-shadow .2s ease,background .2s ease}
+.contact-form-grid input,.contact-form-grid select{height:47px}
+.contact-form-grid textarea{min-height:125px;resize:vertical}
+.contact-form-grid input:focus,.contact-form-grid select:focus,.contact-form-grid textarea:focus{border-color:var(--bc-accent);box-shadow:0 0 0 3px rgba(185,28,28,.12);background:var(--bc-surface)}
+.contact-optional,.contact-help{font-weight:500;color:var(--bc-muted)}
+.contact-help{display:block;margin-top:7px;font-size:10px;line-height:1.45}
+.contact-form-actions{display:flex;justify-content:flex-end;gap:10px;align-items:center;margin-top:2px}
+.contact-form-actions .secondary-btn,.contact-form-actions .primary-btn{min-width:130px;justify-content:center;cursor:pointer}
+.contact-form-status{min-height:18px;font-size:12px;font-weight:700;margin-top:-4px}
+.contact-form-status.success{color:#9f1239}
+.contact-form-status.error{color:#b91c1c}
+html[data-theme="dark"] .contact-modal-backdrop{background:rgba(5,2,3,.76)}
+html[data-theme="dark"] .contact-modal-card{background:#201519!important;border-color:#493238!important;color:#f8edf0!important;box-shadow:0 34px 90px rgba(0,0,0,.55)}
+html[data-theme="dark"] .contact-modal-heading h2,html[data-theme="dark"] .contact-form-grid label{color:#f8edf0!important}
+html[data-theme="dark"] .contact-modal-heading p,html[data-theme="dark"] .contact-help,html[data-theme="dark"] .contact-optional{color:#c2aeb3!important}
+html[data-theme="dark"] .contact-form-grid input,html[data-theme="dark"] .contact-form-grid select,html[data-theme="dark"] .contact-form-grid textarea{background:#1a1114!important;color:#f8edf0!important;border-color:#493238!important}
+html[data-theme="dark"] .contact-form-grid input:focus,html[data-theme="dark"] .contact-form-grid select:focus,html[data-theme="dark"] .contact-form-grid textarea:focus{background:#28191d!important;border-color:#f16f7b!important;box-shadow:0 0 0 3px rgba(241,111,123,.14)}
+html[data-theme="dark"] .contact-modal-close{background:#351c22!important;color:#f9a8b4!important}
+html[data-theme="dark"] .contact-modal-close:hover{background:#fff4f6!important;color:#65152a!important}
+html[data-theme="dark"] .contact-form-status.success{color:#f9a8b4}
+html[data-theme="dark"] .contact-form-status.error{color:#fb7185}
+@media(max-width:700px){.contact-modal-backdrop{padding:10px}.contact-modal-card{padding:24px 18px;border-radius:18px;max-height:92vh}.contact-form-grid{grid-template-columns:1fr}.contact-form-grid .full{grid-column:auto}.contact-form-actions{flex-direction:column-reverse}.contact-form-actions .secondary-btn,.contact-form-actions .primary-btn{width:100%}.contact-modal-heading h2{font-size:24px}}
+.login-contact-btn{display:inline-flex;align-items:center;justify-content:center;margin-left:10px;border:0;background:transparent;color:#9f1239;font:inherit;font-size:12px;font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.login-contact-btn:hover{color:#65152a}
+html[data-theme="dark"] .login-contact-btn{color:#f9a8b4}
+html[data-theme="dark"] .login-contact-btn:hover{color:#fff4f6}
+
+@media(max-width:900px){
+  .navbar .nav-links .nav-contact-link{width:100%;justify-content:flex-start;text-align:left;padding:10px 8px}
+}
+
+/* =========================================================
+   BloodCare visual consistency cleanup
+   Shared logo + consistent service CTA colors
+   ========================================================= */
+.brand-logo-icon{
+  display:block;
+  width:34px;
+  height:34px;
+  flex:0 0 34px;
+  object-fit:contain;
+  border-radius:9px;
+}
+.logo .brand-logo-icon{width:34px;height:34px;flex-basis:34px}
+.footer-brand .brand-logo-icon{width:32px;height:32px;flex-basis:32px}
+.staff-brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.staff-brand .staff-brand-icon{width:34px;height:34px;flex-basis:34px;border-radius:9px}
+.staff-brand>span{display:block;line-height:1.1}
+.staff-brand small{line-height:1.25}
+
+/* All three homepage service buttons intentionally share one treatment. */
+.path-grid .path-card .path-cta,
+.path-grid .path-donate .path-cta,
+.path-grid .path-request-direct .path-cta,
+.path-grid .path-card .path-cta.alt{
+  background:#b91c1c !important;
+  border:1px solid #b91c1c !important;
+  color:#fff !important;
+}
+html[data-theme="light"] .path-grid .path-card .path-cta:hover{
+  background:#7f1d32 !important;
+  border-color:#7f1d32 !important;
+  color:#fff !important;
+}
+html[data-theme="dark"] .path-grid .path-card .path-cta{
+  background:#7f1d32 !important;
+  border-color:#7f1d32 !important;
+  color:#fff !important;
+}
+html[data-theme="dark"] .path-grid .path-card .path-cta:hover{
+  background:#fff4f6 !important;
+  border-color:#fff4f6 !important;
+  color:#65152a !important;
+}
+
+
+/* =========================================================
+   Profile readability and download action
+   ========================================================= */
+.profile-top-actions{display:flex;align-items:center;justify-content:flex-end;gap:9px;flex-wrap:wrap}
+.profile-top-card .profile-download-btn{background:#fff;color:#9f1239;border-color:#fff;box-shadow:none}
+.profile-top-card .profile-download-btn:hover{background:#fff1f2;color:#65152a;border-color:#fff1f2;transform:translateY(-1px)}
+.profile-download-btn svg{width:17px;height:17px;flex:0 0 auto}
+
+html[data-theme="dark"] .profile-page{color:#f8edf0!important}
+html[data-theme="dark"] .profile-panel{
+  background:#201519!important;
+  color:#f8edf0!important;
+  border-color:#493238!important;
+  box-shadow:0 14px 36px rgba(0,0,0,.28)!important;
+}
+html[data-theme="dark"] .profile-panel h3{color:#fff4f6!important}
+html[data-theme="dark"] .detail-item{
+  background:#28191d!important;
+  border:1px solid #3d2a2f!important;
+}
+html[data-theme="dark"] .detail-item span,
+html[data-theme="dark"] .detail-item small{color:#c2aeb3!important}
+html[data-theme="dark"] .detail-item b{color:#f8edf0!important}
+html[data-theme="dark"] .profile-summary p{color:#c2aeb3!important}
+html[data-theme="dark"] .profile-summary p b{color:#fff4f6!important}
+html[data-theme="dark"] .profile-table{border:1px solid #493238;border-radius:12px;overflow:auto}
+html[data-theme="dark"] .profile-table table{background:#1a1114!important;color:#f8edf0!important}
+html[data-theme="dark"] .profile-table th{
+  background:#2a1a1f!important;
+  color:#fff4f6!important;
+  border-color:#493238!important;
+}
+html[data-theme="dark"] .profile-table td{
+  background:#201519!important;
+  color:#ead9dd!important;
+  border-color:#3d2a2f!important;
+}
+html[data-theme="dark"] .profile-table tbody tr:hover td{background:#28191d!important}
+html[data-theme="dark"] .profile-table td b{color:#fff4f6!important}
+html[data-theme="dark"] .profile-table small{color:#c2aeb3!important}
+html[data-theme="dark"] .profile-table .pill,
+html[data-theme="dark"] .profile-table .status{border:1px solid #65404a!important}
+html[data-theme="dark"] .profile-quick-actions a{background:#351c22!important;color:#f9a8b4!important;border:1px solid #53313a!important}
+html[data-theme="dark"] .profile-quick-actions a:hover{background:#fff4f6!important;color:#65152a!important;border-color:#fff4f6!important}
+html[data-theme="dark"] .profile-empty{color:#c2aeb3!important}
+html[data-theme="dark"] .profile-top-card .profile-download-btn{background:#fff4f6!important;color:#65152a!important;border-color:#fff4f6!important}
+html[data-theme="dark"] .profile-top-card .profile-download-btn:hover{background:#fecdd3!important;color:#4b1020!important;border-color:#fecdd3!important}
+@media(max-width:720px){.profile-top-actions{grid-column:1/-1;justify-content:stretch}.profile-top-actions>*{flex:1}.profile-top-card .profile-download-btn,.profile-top-card .profile-signout{width:100%}.profile-signout-form{justify-self:stretch}}
+
+
+/* =========================================================
+   Profile placement + mobile responsiveness (v11)
+   ========================================================= */
+.profile-page{width:min(100%,1120px);overflow:hidden}
+.profile-title{max-width:none!important;width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
+.profile-title .section-label{margin:0}
+.profile-page-signout-form{margin-left:auto;display:flex;justify-content:flex-end}
+.profile-page-signout{
+  min-width:92px;
+  background:transparent!important;
+  color:#9f1239!important;
+  border:1px solid #d9a4af!important;
+  font-weight:700;
+  padding:9px 14px!important;
+  border-radius:10px!important;
+}
+.profile-page-signout:hover,.profile-page-signout:focus-visible{background:#9f1239!important;color:#fff!important;border-color:#9f1239!important;outline:none}
+.profile-top-card{grid-template-columns:auto minmax(0,1fr) auto!important}
+.profile-identity{min-width:0}
+.profile-identity h2,.profile-identity p{overflow-wrap:anywhere}
+.profile-top-actions{min-width:0}
+.profile-table{width:100%;max-width:100%}
+.profile-table table{width:100%}
+html[data-theme="dark"] .profile-page-signout{color:#f9a8b4!important;border-color:#65404a!important;background:#201519!important}
+html[data-theme="dark"] .profile-page-signout:hover,html[data-theme="dark"] .profile-page-signout:focus-visible{background:#fff4f6!important;color:#65152a!important;border-color:#fff4f6!important}
+
+@media(max-width:760px){
+  .profile-page{padding-left:14px!important;padding-right:14px!important}
+  .profile-title{padding:0 2px;margin-bottom:12px}
+  .profile-top-card{grid-template-columns:auto minmax(0,1fr)!important;gap:14px!important;padding:20px!important}
+  .profile-top-actions{grid-column:1/-1!important;width:100%;justify-content:stretch!important}
+  .profile-top-actions>*{flex:1 1 100%!important}
+  .profile-top-card .profile-download-btn{width:100%!important;justify-content:center!important}
+  .profile-details-grid{grid-template-columns:1fr!important}
+  .profile-panel{padding:18px!important;border-radius:15px!important;min-width:0}
+  .detail-grid{grid-template-columns:1fr 1fr!important;gap:10px!important}
+  .profile-quick-actions{justify-content:stretch!important}
+  .profile-quick-actions a{flex:1 1 140px;text-align:center}
+
+  /* Convert Profile tables into stacked mobile record cards. */
+  .profile-table{overflow:visible!important;border:0!important;background:transparent!important}
+  .profile-table table,.profile-table tbody,.profile-table tr,.profile-table td{display:block!important;width:100%!important;min-width:0!important}
+  .profile-table table{background:transparent!important}
+  .profile-table thead{display:none!important}
+  .profile-table tr{margin:0 0 12px;border:1px solid #eadfe1;border-radius:12px;overflow:hidden;background:#fff}
+  .profile-table td{display:grid!important;grid-template-columns:minmax(92px,.42fr) minmax(0,1fr);gap:12px;align-items:start;padding:11px 12px!important;border:0!important;border-bottom:1px solid #f0e4e6!important;text-align:left!important;overflow-wrap:anywhere}
+  .profile-table td:last-child{border-bottom:0!important}
+  .profile-table td::before{content:attr(data-label);font-size:9px;line-height:1.4;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#8b7377}
+  .profile-table td[colspan]{display:block!important;text-align:center!important}
+  .profile-table td[colspan]::before{content:none!important}
+  html[data-theme="dark"] .profile-table tr{background:#201519!important;border-color:#493238!important}
+  html[data-theme="dark"] .profile-table td{background:#201519!important;border-bottom-color:#3d2a2f!important}
+  html[data-theme="dark"] .profile-table td::before{color:#c2aeb3!important}
+}
+
+@media(max-width:520px){
+  .profile-page{padding-top:94px!important}
+  .profile-title{align-items:center}
+  .profile-title .section-label{font-size:10px}
+  .profile-page-signout{min-width:auto;padding:8px 11px!important;font-size:10px!important}
+  .profile-top-card{grid-template-columns:1fr!important;text-align:center}
+  .profile-avatar{margin:0 auto}
+  .profile-top-actions{grid-column:1!important}
+  .detail-grid{grid-template-columns:1fr!important}
+  .blood-type-badge{width:90px;height:90px}
+  .blood-type-badge b{font-size:26px}
+}
+
+/* Keep the relocated Profile Sign Out compact on narrow screens. */
+@media(max-width:600px){
+  .profile-title .profile-page-signout-form{grid-column:auto!important;justify-self:auto!important;width:auto!important;flex:0 0 auto!important}
+  .profile-title .profile-page-signout{width:auto!important;min-width:0!important}
+}
+
+
+/* ===== BloodCare v13 profile actions ===== */
+.profile-edit-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid rgba(255,255,255,.62);background:transparent;color:#fff;border-radius:11px;padding:10px 14px;font-weight:700;cursor:pointer;text-decoration:none;transition:.2s ease}
+.profile-edit-btn svg{width:18px;height:18px}.profile-edit-btn:hover{background:#fff;color:#9f1239;border-color:#fff;transform:translateY(-1px)}
+.non-donor-card{display:flex;align-items:center;justify-content:space-between;gap:28px}.non-donor-copy{min-width:0}.non-donor-copy h3{margin-bottom:7px}.non-donor-copy p{margin:0}.non-donor-actions{flex:0 0 auto;display:flex;justify-content:flex-end}.non-donor-actions .primary-btn{display:inline-flex;text-decoration:none;white-space:nowrap}
+.profile-edit-card{width:min(620px,100%)}.profile-edit-card .modal-header h2{margin:4px 0 5px}.profile-edit-card .modal-header p{margin:0;color:var(--muted);font-size:12px}.profile-edit-card .modal-action-row{display:flex;justify-content:flex-end;gap:10px;flex-direction:row}
+html[data-theme="dark"] .profile-edit-btn{color:#fff4f6;border-color:rgba(255,244,246,.46)}html[data-theme="dark"] .profile-edit-btn:hover{background:#fff4f6!important;color:#65152a!important;border-color:#fff4f6!important}
+html[data-theme="dark"] .profile-edit-card{background:#201519!important;border-color:#493238!important;color:#f8edf0!important}html[data-theme="dark"] .profile-edit-card .modal-header p{color:#c2aeb3!important}
+@media(max-width:720px){.non-donor-card{align-items:stretch;flex-direction:column}.non-donor-actions{justify-content:stretch}.non-donor-actions .primary-btn{width:100%;justify-content:center}.profile-top-actions .profile-edit-btn{width:100%}.profile-edit-card .modal-action-row{flex-direction:column-reverse}.profile-edit-card .modal-action-row>*{width:100%;text-align:center}}
+
+/* BloodCare v13 nav-name sizing */
+.profile-btn span{max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media(max-width:900px){.profile-btn span{display:none!important}}
+
+/* =========================================================
+   v14 one-page pacing + account-aware contact form
+   ========================================================= */
+.contact-account-field[readonly] {
+  cursor: default;
+  opacity: .9;
+}
+html[data-theme="light"] .contact-account-field[readonly] {
+  background:#fff7f9 !important;
+  border-color:#eadfe1 !important;
+}
+html[data-theme="dark"] .contact-account-field[readonly] {
+  background:#28191d !important;
+  border-color:#493238 !important;
+  color:#f8edf0 !important;
+}
+
+/* On desktop each primary homepage section owns one viewport panel.
+   Content may still grow taller naturally if it actually needs more room. */
+@media (min-width: 901px) {
+  :root { --bc-public-nav-height: 70px; }
+
+  body.public-v3 main > #home {
+    min-height: 100svh !important;
+    scroll-margin-top: 0;
+  }
+
+  body.public-v3 main > #about,
+  body.public-v3 main > #services,
+  body.public-v3 main > #blood-onlines,
+  body.public-v3 main > #public-feeds-preview {
+    min-height: calc(100svh - var(--bc-public-nav-height)) !important;
+    scroll-margin-top: var(--bc-public-nav-height);
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  body.public-v3 main > #about,
+  body.public-v3 main > #blood-onlines,
+  body.public-v3 main > #public-feeds-preview {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+
+  body.public-v3 main > #services {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+
+  body.public-v3 main > #about > .section-inner,
+  body.public-v3 main > #services > .section-inner,
+  body.public-v3 main > #blood-onlines > .section-inner,
+  body.public-v3 main > #public-feeds-preview > .section-inner {
+    width: min(1180px, 100%);
+  }
+
+  body.public-v3 #services .path-heading,
+  body.public-v3 #blood-onlines .section-head,
+  body.public-v3 #public-feeds-preview .section-head {
+    margin-bottom: 24px;
+  }
+}
+
+/* =========================================================
+   v15 homepage composition + richer Public Feeds
+   ========================================================= */
+/* Services label now matches the other simple section labels. */
+body.public-v3 #services .path-pill {
+  display:inline-block !important;
+  background:transparent !important;
+  border:0 !important;
+  border-radius:0 !important;
+  padding:0 !important;
+  box-shadow:none !important;
+  color:#b91c1c !important;
+  letter-spacing:.08em;
+}
+html[data-theme="dark"] body.public-v3 #services .path-pill {
+  background:transparent !important;
+  border:0 !important;
+  color:#ef6b7d !important;
+}
+
+/* Desktop one-page sections still own a screen, but content starts at a
+   deliberate top position instead of floating in the middle of empty space. */
+@media (min-width:901px) {
+  body.public-v3 main > #about,
+  body.public-v3 main > #services,
+  body.public-v3 main > #blood-onlines,
+  body.public-v3 main > #public-feeds-preview {
+    min-height:calc(100svh - 70px) !important;
+    display:flex !important;
+    align-items:flex-start !important;
+    justify-content:center !important;
+    padding:clamp(54px,7vh,76px) 24px clamp(58px,7vh,80px) !important;
+  }
+
+  body.public-v3 main > #about > .section-inner,
+  body.public-v3 main > #services > .section-inner,
+  body.public-v3 main > #blood-onlines > .section-inner,
+  body.public-v3 main > #public-feeds-preview > .section-inner {
+    width:min(1160px,100%) !important;
+    margin:0 auto !important;
+  }
+
+  body.public-v3 #services .path-heading,
+  body.public-v3 #blood-onlines .section-head,
+  body.public-v3 #public-feeds-preview .section-head {
+    margin-bottom:clamp(24px,3vh,34px) !important;
+  }
+
+  body.public-v3 #services .path-grid {
+    gap:18px !important;
+  }
+  body.public-v3 #services .path-card {
+    min-height:390px !important;
+    padding:24px 24px 22px !important;
+  }
+  body.public-v3 #services .path-card ol {
+    gap:12px !important;
+    margin-bottom:20px !important;
+  }
+
+  body.public-v3 #blood-onlines .section-inner {
+    width:min(1080px,100%) !important;
+  }
+  body.public-v3 #blood-onlines .blood-grid {
+    gap:14px !important;
+  }
+
+  body.public-v3 #public-feeds-preview .section-inner {
+    width:min(1160px,100%) !important;
+  }
+}
+
+/* Three latest feed items form a balanced row. */
+.public-feed-grid {
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:20px !important;
+  align-items:stretch !important;
+}
+.public-feed-grid .feed-card {
+  min-width:0;
+  height:100%;
+  padding:18px !important;
+  border-radius:16px !important;
+}
+.feed-card-image,
+.event-feed-card > img {
+  display:block;
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:16 / 10;
+  object-fit:cover !important;
+  object-position:center;
+  border-radius:13px !important;
+  margin:0 0 16px !important;
+  background:#f3e8ea;
+}
+.public-feed-grid .feed-card h3 {
+  font-size:18px;
+  line-height:1.35;
+  margin:2px 0 10px;
+}
+.public-feed-grid .feed-card > p {
+  margin:0 0 14px;
+  line-height:1.65;
+}
+.home-public-feeds .feed-card {
+  min-height:390px;
+}
+.home-public-feeds .feed-card:not(:has(.feed-card-image)) {
+  min-height:330px;
+}
+
+@media (max-width:900px) {
+  .public-feed-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+  .feed-card-image,
+  .event-feed-card > img {
+    aspect-ratio:16 / 10;
+  }
+}
+@media (max-width:600px) {
+  .public-feed-grid {
+    grid-template-columns:1fr !important;
+  }
+  .home-public-feeds .feed-card,
+  .home-public-feeds .feed-card:not(:has(.feed-card-image)) {
+    min-height:0;
+  }
+}
+
+/* ==========================================================
+   v18 — Partner facility actions + Admin contact inbox
+   ========================================================== */
+.clickable-facility{cursor:pointer;position:relative}
+.clickable-facility:focus-visible{outline:3px solid rgba(185,28,28,.22);outline-offset:3px}
+.facility-card-main{min-width:0}
+.facility-choice-modal{width:min(780px,100%);padding:30px}
+.facility-choice-head{padding-right:48px}
+.facility-choice-head h2{margin:10px 0 6px;font-size:30px;line-height:1.1}
+.facility-choice-head p{margin:0;color:var(--bc-muted);line-height:1.55}
+.facility-choice-details{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:20px 0}
+.facility-choice-details p{margin:0;padding:13px;border:1px solid var(--bc-border);border-radius:13px;background:var(--bc-soft);display:grid;gap:4px}
+.facility-choice-details b{font-size:11px;color:var(--bc-text)}
+.facility-choice-details span{font-size:12px;color:var(--bc-muted);line-height:1.45}
+.facility-choice-prompt{display:grid;gap:4px;margin:22px 0 12px}
+.facility-choice-prompt b{font-size:15px}
+.facility-choice-prompt span{font-size:12px;color:var(--bc-muted)}
+.facility-service-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.facility-service-btn{display:grid;gap:5px;text-decoration:none;border:1px solid var(--bc-border);border-radius:15px;padding:15px;background:var(--bc-surface);color:var(--bc-text);transition:.2s ease}
+.facility-service-btn:hover{transform:translateY(-2px);border-color:#d8a3ac;box-shadow:0 10px 24px rgba(91,26,26,.08)}
+.facility-service-btn b{color:var(--bc-brand);font-size:14px}
+.facility-service-btn span{color:var(--bc-muted);font-size:11px;line-height:1.45}
+.facility-choice-map-actions{display:flex;gap:9px;justify-content:flex-end;margin-top:18px;flex-wrap:wrap}
+
+.contact-row-new td{background:rgba(185,28,28,.035)}
+.contact-row-new td:first-child{box-shadow:inset 3px 0 0 var(--bc-brand)}
+.contact-message-preview{max-width:360px;line-height:1.5;color:var(--bc-muted)}
+.contact-admin-toolbar{display:grid;grid-template-columns:minmax(260px,1fr) 180px 180px;margin-bottom:14px}
+.contact-admin-toolbar input,.contact-admin-toolbar select{width:100%}
+.contact-admin-modal{width:min(820px,100%)}
+.contact-admin-meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:15px 0}
+.contact-admin-meta>div{padding:12px;border:1px solid var(--bc-border);border-radius:12px;background:var(--bc-soft);display:grid;gap:5px}
+.contact-admin-meta small,.contact-admin-message>small,.contact-admin-reply-history>small{font-size:9px;letter-spacing:.08em;font-weight:800;color:var(--bc-muted)}
+.contact-admin-meta b{font-size:11px;line-height:1.4;overflow-wrap:anywhere}
+.contact-admin-message,.contact-admin-reply-history{padding:16px;border-radius:14px;border:1px solid var(--bc-border);background:var(--bc-surface);margin:13px 0}
+.contact-admin-message p,.contact-admin-reply-history p{white-space:pre-wrap;line-height:1.65;margin:7px 0 0;color:var(--bc-text)}
+.contact-admin-reply-history{background:var(--bc-soft)}
+.contact-admin-reply-history span{display:block;margin-top:7px;font-size:10px;color:var(--bc-muted)}
+.contact-admin-controls{grid-template-columns:minmax(0,1fr) auto;align-items:end;margin-top:16px}
+.contact-status-action .secondary-btn{min-width:120px}
+.contact-reply-form{margin-top:18px;padding-top:18px;border-top:1px solid var(--bc-border)}
+.status.replied{background:#ede9fe;color:#6d28d9}
+.status.read{background:#dbeafe;color:#1d4ed8}
+.status.resolved{background:#e5e7eb;color:#374151}
+
+html[data-theme="dark"] .facility-service-btn,
+html[data-theme="dark"] .contact-admin-message{background:#201519!important;border-color:#493238!important;color:#f8edf0!important}
+html[data-theme="dark"] .facility-choice-details p,
+html[data-theme="dark"] .contact-admin-meta>div,
+html[data-theme="dark"] .contact-admin-reply-history{background:#1a1114!important;border-color:#493238!important;color:#f8edf0!important}
+html[data-theme="dark"] .contact-row-new td{background:rgba(248,220,226,.025)}
+html[data-theme="dark"] .status.replied{background:#352748;color:#e9d5ff}
+html[data-theme="dark"] .status.read{background:#1f304d;color:#bfdbfe}
+html[data-theme="dark"] .status.resolved{background:#312529;color:#d7c6ca}
+
+@media(max-width:850px){
+  .facility-choice-details{grid-template-columns:1fr}
+  .contact-admin-meta{grid-template-columns:1fr 1fr}
+  .contact-admin-toolbar{grid-template-columns:1fr 1fr}
+  .contact-admin-toolbar input{grid-column:1/-1}
+}
+@media(max-width:620px){
+  .facility-choice-modal{padding:24px 17px}
+  .facility-choice-head h2{font-size:24px}
+  .facility-service-actions{grid-template-columns:1fr}
+  .facility-choice-map-actions{flex-direction:column}
+  .facility-choice-map-actions .secondary-btn{width:100%;text-align:center}
+  .contact-admin-meta,.contact-admin-toolbar,.contact-admin-controls{grid-template-columns:1fr}
+  .contact-admin-toolbar input{grid-column:auto}
+  .contact-status-action label{display:none}
+}
+.selected-facility-context{max-width:1180px;margin:-10px auto 20px;display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--bc-border);border-radius:14px;background:var(--bc-soft)}
+.selected-facility-context>div{display:grid;gap:2px;min-width:0;flex:1}.selected-facility-context b{font-size:13px}.selected-facility-context small{color:var(--bc-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.selected-facility-context a{font-size:11px;font-weight:800;color:var(--bc-brand);text-decoration:none}
+html[data-theme="dark"] .selected-facility-context{background:#1a1114!important;border-color:#493238!important}
+@media(max-width:620px){.selected-facility-context{align-items:flex-start;flex-wrap:wrap;margin:-4px 16px 18px}.selected-facility-context>div{flex-basis:calc(100% - 100px)}.selected-facility-context a{margin-left:auto}.selected-facility-context small{white-space:normal}}
+
+/* ==========================================================
+   v19 facility hierarchy / branch-scoped management
+   ========================================================== */
+.login-form-top.login-form-top-theme-only{justify-content:flex-end}
+.admin-dashboard-scope{display:flex;flex-direction:column;gap:.35rem;min-width:min(100%,310px);align-items:flex-end}
+.admin-dashboard-scope label{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted,#6b7280)}
+.admin-dashboard-scope select{min-width:260px;max-width:100%;padding:.72rem .9rem;border-radius:12px}
+.admin-dashboard-scope small{max-width:310px;text-align:right;color:var(--muted,#6b7280)}
+.staff-facility-scope{display:inline-flex;flex-wrap:wrap;align-items:center;gap:.45rem .75rem;margin-top:.8rem;padding:.62rem .85rem;border:1px solid rgba(185,28,28,.16);border-radius:12px;background:rgba(185,28,28,.05)}
+.staff-facility-scope b{color:var(--brand,#b91c1c)}
+.staff-facility-scope span{font-size:.82rem;color:var(--muted,#6b7280)}
+.staff-assignment-cell{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;min-width:230px}
+.staff-assignment-cell .small-btn{margin-left:auto}
+.staff-facility-modal{width:min(680px,94vw)}
+.staff-facility-choice-list{display:grid;gap:.65rem;max-height:min(55vh,480px);overflow:auto;margin:1rem 0;padding-right:.2rem}
+.staff-facility-choice{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:.7rem;padding:.85rem;border:1px solid rgba(148,163,184,.28);border-radius:14px;background:var(--surface,#fff);cursor:pointer}
+.staff-facility-choice span{display:grid;gap:.12rem}
+.staff-facility-choice span small{color:var(--muted,#6b7280)}
+.staff-facility-choice em{font-size:.72rem;font-style:normal;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--muted,#6b7280)}
+.staff-facility-choice input[type="radio"]:disabled+em{opacity:.45}
+.main-branch-tag{white-space:nowrap}
+html[data-theme="dark"] .staff-facility-scope{background:rgba(239,68,68,.08);border-color:rgba(248,113,113,.18)}
+html[data-theme="dark"] .staff-facility-choice{background:#1b1114;border-color:rgba(255,255,255,.1)}
+@media(max-width:900px){.admin-dashboard-scope{width:100%;align-items:flex-start}.admin-dashboard-scope select{width:100%;min-width:0}.admin-dashboard-scope small{text-align:left}.staff-assignment-cell .small-btn{margin-left:0}}
+@media(max-width:640px){.staff-facility-choice{grid-template-columns:auto minmax(0,1fr) auto}.staff-facility-choice em{display:none}.staff-facility-modal{padding:1rem}.staff-facility-scope{display:flex;width:100%}}
+
+
+/* ==========================================================
+   v20 — Homepage overview + dedicated public detail pages
+   ========================================================== */
+body.public-v3.home-overview main > #home,
+body.public-v3.home-overview main > #about-preview,
+body.public-v3.home-overview main > #services-preview,
+body.public-v3.home-overview main > #blood-preview,
+body.public-v3.home-overview main > #facilities-preview,
+body.public-v3.home-overview main > #public-feeds-preview{
+  min-height:0!important;
+  height:auto!important;
+  display:block!important;
+  width:100%!important;
+}
+body.public-v3.home-overview main > #home{padding-bottom:54px!important}
+body.public-v3.home-overview main > .home-overview-section{padding:58px 24px!important}
+body.public-v3.home-overview main > .home-overview-section > .section-inner{width:min(1180px,100%)!important;margin:0 auto!important;min-height:0!important}
+body.public-v3.home-overview .hero-v3-shell{min-height:0!important}
+body.public-v3.home-overview .hero-visual{min-height:430px!important}
+.home-overview-two-col{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:34px;align-items:center}
+.home-overview-copy h2,.home-overview-heading h2{font-size:clamp(31px,4vw,48px);line-height:1.06;letter-spacing:-.035em;margin:8px 0 12px;color:var(--bc-text)}
+.home-overview-copy p,.home-overview-heading p{color:var(--bc-muted);line-height:1.7;margin:0}
+.home-overview-link{display:inline-flex;margin-top:18px;font-weight:800}
+.home-overview-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:22px}
+.home-overview-heading>div{max-width:720px}
+.home-overview-heading>.home-overview-link{margin:0 0 5px;white-space:nowrap}
+.home-about-values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.home-about-values article{border:1px solid var(--bc-border);border-radius:16px;background:var(--bc-surface);padding:20px;box-shadow:var(--bc-shadow)}
+.home-about-values article>span{display:inline-grid;place-items:center;width:31px;height:31px;border-radius:50%;background:var(--bc-soft);color:var(--bc-brand);font-size:10px;font-weight:900}
+.home-about-values h3{margin:14px 0 7px;font-size:18px}.home-about-values p{margin:0;color:var(--bc-muted);font-size:12px;line-height:1.6}
+.home-service-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.home-service-card{display:flex;flex-direction:column;min-height:238px;padding:20px;border:1px solid var(--bc-border);border-radius:17px;background:var(--bc-surface);color:var(--bc-text);text-decoration:none;box-shadow:var(--bc-shadow);transition:.2s ease}
+.home-service-card:hover{transform:translateY(-3px);border-color:#d8a3ac;box-shadow:var(--bc-shadow-hover)}
+.home-service-card .path-icon{margin-bottom:14px}.home-service-card h3{margin:0 0 7px;font-size:18px}.home-service-card p{margin:0;color:var(--bc-muted);font-size:12px;line-height:1.6}.home-service-card b{margin-top:auto;padding-top:18px;color:var(--bc-brand);font-size:12px}
+.home-blood-layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);gap:18px;align-items:stretch}
+.home-blood-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;align-content:start}
+.home-inventory-summary{display:flex;flex-direction:column;justify-content:center;padding:24px;border:1px solid var(--bc-border);border-radius:18px;background:var(--bc-surface);box-shadow:var(--bc-shadow)}
+.home-inventory-summary>strong{font-size:48px;line-height:1;color:var(--bc-brand);margin-top:12px}.home-inventory-summary>small{color:var(--bc-muted);font-weight:700;margin-top:4px}.home-inventory-summary>p{color:var(--bc-muted);font-size:12px;line-height:1.65;margin:17px 0}.home-summary-actions{display:flex;gap:9px;flex-wrap:wrap}
+.home-facility-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.home-facility-card{cursor:pointer;display:flex;flex-direction:column;min-height:200px;padding:20px;border:1px solid var(--bc-border);border-radius:17px;background:var(--bc-surface);box-shadow:var(--bc-shadow);transition:.2s ease}
+.home-facility-card:hover,.home-facility-card:focus-visible{transform:translateY(-3px);border-color:#d8a3ac;box-shadow:var(--bc-shadow-hover);outline:none}
+.home-facility-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.home-facility-card h3{margin:14px 0 7px;font-size:18px}.home-facility-card p{margin:0;color:var(--bc-muted);font-size:12px;line-height:1.6}.home-facility-card small{margin-top:auto;padding-top:16px;color:var(--bc-brand);font-weight:800;font-size:11px}.facility-active-dot{display:inline-flex;align-items:center;gap:5px;color:#15803d;font-size:10px;font-weight:900}.facility-active-dot::before{content:"";width:7px;height:7px;border-radius:50%;background:#22c55e}
+body.public-v3.home-overview #public-feeds-preview .public-feed-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+body.public-v3.home-overview #public-feeds-preview .feed-card{min-height:0!important}
+body.public-v3.home-overview #public-feeds-preview .feed-card-image{aspect-ratio:16/9!important;object-fit:cover}
+/* SERVICES label should match every other section label; no special pill background. */
+body.public-v3 #services-preview .section-label,body.public-v3 .public-detail-shell .section-label{background:transparent!important;border:0!important;padding:0!important;border-radius:0!important;box-shadow:none!important}
+.public-detail-shell{padding-top:112px!important;padding-bottom:68px!important}.public-detail-title{max-width:1180px;margin:0 auto 28px!important}.public-detail-title h1{font-size:clamp(38px,5vw,60px);letter-spacing:-.04em;line-height:1.03;margin:7px 0 10px}.public-detail-title p{max-width:760px;color:var(--bc-muted);line-height:1.7}.public-detail-section{padding:0!important}.public-detail-section>.section-inner{width:100%!important;max-width:none!important;margin:0!important;padding:0!important}
+.public-detail-cta{max-width:1180px;margin:24px auto 0;padding:22px;display:flex;align-items:center;justify-content:space-between;gap:20px}.public-detail-cta h2{margin:7px 0 0;font-size:25px}
+.service-detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.service-detail-grid .path-card{min-height:410px!important}
+.blood-online-summary{display:grid;grid-template-columns:.65fr 1.35fr;gap:28px;align-items:center;margin-bottom:18px;padding:22px}.blood-online-summary>div:first-child{display:flex;flex-direction:column}.blood-online-summary strong{font-size:48px;line-height:1;color:var(--bc-brand);margin-top:10px}.blood-online-summary small{color:var(--bc-muted);font-weight:700}.blood-online-summary h3{margin:0 0 6px;font-size:21px}.blood-online-summary p{margin:0 0 14px;color:var(--bc-muted);font-size:12px;line-height:1.6}.full-blood-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}.blood-online-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}
+html[data-theme="dark"] .home-about-values article,html[data-theme="dark"] .home-service-card,html[data-theme="dark"] .home-inventory-summary,html[data-theme="dark"] .home-facility-card{background:#201519!important;border-color:#493238!important;color:#f8edf0!important}
+@media(max-width:980px){.home-overview-two-col,.home-blood-layout{grid-template-columns:1fr}.home-service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.home-facility-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.home-blood-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}}
+@media(max-width:700px){body.public-v3.home-overview main > .home-overview-section{padding:44px 16px!important}.home-overview-heading{display:block}.home-overview-heading>.home-overview-link{margin-top:12px}.home-about-values,.home-service-grid,.home-facility-grid{grid-template-columns:1fr}.home-blood-grid,.full-blood-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.service-detail-grid{grid-template-columns:1fr}.blood-online-summary{grid-template-columns:1fr}.public-detail-cta{align-items:flex-start;flex-direction:column}.public-detail-shell{padding-top:92px!important}.home-service-card{min-height:0}}
+
+/* ==========================================================
+   v21 — Blood On-Lines search, richer service cards, balanced
+   homepage inventory, dark facility modal, larger map
+   ========================================================== */
+.blood-online-summary{grid-template-columns:minmax(220px,.55fr) minmax(0,1.45fr)!important;gap:22px!important;align-items:stretch!important}
+.blood-online-total-block{justify-content:center;padding:6px 8px}
+.blood-quick-search{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:20px;align-items:center;border-left:1px solid var(--bc-border);padding-left:22px}
+.blood-quick-search-copy h3{margin:6px 0 5px!important;font-size:20px!important}.blood-quick-search-copy p{margin:0!important}
+.blood-quick-search-fields{display:grid;grid-template-columns:minmax(130px,.7fr) minmax(180px,1fr) auto;gap:9px;align-items:end}
+.blood-quick-search-fields label{display:grid;gap:6px}.blood-quick-search-fields label>span{font-size:10px;font-weight:800;letter-spacing:.05em;color:var(--bc-muted);text-transform:uppercase}
+.blood-quick-search-fields select{width:100%;border:1px solid var(--bc-border);background:var(--bc-surface);color:var(--bc-text);border-radius:10px;padding:10px 11px;min-height:42px;outline:none}
+.blood-quick-search-fields select:focus{border-color:#c77484;box-shadow:0 0 0 3px rgba(185,28,28,.08)}
+.blood-quick-search-btn{border:1px solid var(--bc-brand);background:transparent;color:var(--bc-brand);border-radius:10px;padding:10px 14px;min-height:42px;font-weight:800;cursor:pointer;white-space:nowrap;transition:.2s ease}
+.blood-quick-search-btn:hover{background:var(--bc-brand);color:#fff;transform:translateY(-1px)}
+html[data-theme="dark"] .blood-quick-search-fields select{background:#1a1114!important;border-color:#493238!important;color:#f8edf0!important}
+html[data-theme="dark"] .blood-quick-search{border-left-color:#493238}
+
+.home-service-card{position:relative;overflow:hidden;min-height:270px!important;padding:22px!important;background:linear-gradient(155deg,var(--bc-surface) 0%,color-mix(in srgb,var(--bc-soft) 44%,var(--bc-surface)) 100%)!important}
+.home-service-card::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--bc-brand),#f79aaa 62%,transparent)}
+.home-service-card::after{content:attr(data-symbol);position:absolute;right:-4px;bottom:-32px;font-size:126px;line-height:1;color:var(--bc-brand);opacity:.045;font-weight:900;pointer-events:none;transition:.25s ease}
+.home-service-card:hover::after{opacity:.09;transform:translate(-4px,-5px) scale(1.02)}
+.home-service-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}.home-service-top .path-icon{margin:0!important}
+.home-service-kicker{font-size:9px;font-weight:900;letter-spacing:.09em;color:var(--bc-brand);border:1px solid color-mix(in srgb,var(--bc-brand) 28%,var(--bc-border));border-radius:999px;padding:5px 7px;background:color-mix(in srgb,var(--bc-brand) 6%,transparent)}
+.home-service-card h3{font-size:20px!important}.home-service-card p{min-height:58px}
+.home-service-mini,.home-service-blood-types{display:flex;gap:6px;flex-wrap:wrap;margin-top:15px;position:relative;z-index:1}
+.home-service-mini span,.home-service-blood-types span{font-size:9px;font-weight:800;border:1px solid var(--bc-border);border-radius:999px;padding:6px 8px;background:var(--bc-soft);color:var(--bc-muted)}
+.home-service-blood-types span{min-width:34px;text-align:center;color:var(--bc-brand);background:color-mix(in srgb,var(--bc-brand) 6%,var(--bc-surface))}
+.home-service-card>b{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1}.home-service-card>b span{font-size:16px;transition:.2s ease}.home-service-card:hover>b span{transform:translateX(4px)}
+html[data-theme="dark"] .home-service-card{background:linear-gradient(155deg,#201519 0%,#24161b 100%)!important;border-color:#493238!important}
+html[data-theme="dark"] .home-service-mini span,html[data-theme="dark"] .home-service-blood-types span{background:#1a1114!important;border-color:#493238!important;color:#d5bdc3!important}
+html[data-theme="dark"] .home-service-blood-types span{color:#f3a0b1!important}
+
+.home-blood-heading{margin-bottom:22px!important}.home-blood-heading>div{max-width:760px}.home-blood-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:12px!important}
+.home-blood-summary-bar{display:grid;grid-template-columns:.72fr .72fr .72fr minmax(300px,1.84fr);gap:0;margin-top:16px;border:1px solid var(--bc-border);border-radius:18px;background:var(--bc-surface);box-shadow:var(--bc-shadow);overflow:hidden}
+.home-blood-summary-stat{padding:20px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--bc-border)}
+.home-blood-summary-stat strong{font-size:28px;line-height:1;color:var(--bc-brand)}.home-blood-summary-stat span{font-size:10px;color:var(--bc-muted);font-weight:700;margin-top:6px}
+.home-blood-summary-action{padding:17px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px;background:linear-gradient(135deg,color-mix(in srgb,var(--bc-brand) 5%,var(--bc-surface)),var(--bc-surface))}
+.home-blood-summary-action p{margin:0;color:var(--bc-muted);font-size:11px;line-height:1.55;max-width:330px}.home-blood-summary-action .primary-btn{white-space:nowrap}
+body.public-v3.home-overview main > .home-blood-preview{padding-bottom:38px!important}body.public-v3.home-overview main > .home-facilities-preview{padding-top:38px!important}
+html[data-theme="dark"] .home-blood-summary-bar{background:#201519!important;border-color:#493238!important;color:#f8edf0!important}html[data-theme="dark"] .home-blood-summary-stat{border-right-color:#493238!important}html[data-theme="dark"] .home-blood-summary-action{background:linear-gradient(135deg,#24161b,#201519)!important}
+
+/* Facility choice modal contrast */
+.facility-choice-modal{border:1px solid var(--bc-border);background:var(--bc-surface);color:var(--bc-text)}
+.facility-choice-head h2,.facility-choice-prompt b{color:var(--bc-text)}
+html[data-theme="dark"] .facility-choice-modal{background:#1b1014!important;border-color:#56343d!important;color:#f8edf0!important;box-shadow:0 30px 90px rgba(0,0,0,.55)!important}
+html[data-theme="dark"] .facility-choice-head h2,html[data-theme="dark"] .facility-choice-prompt b,html[data-theme="dark"] .facility-choice-details b{color:#fff4f6!important}
+html[data-theme="dark"] .facility-choice-head p,html[data-theme="dark"] .facility-choice-prompt span,html[data-theme="dark"] .facility-choice-details span{color:#d2b9bf!important}
+html[data-theme="dark"] .facility-choice-details p{background:#24161b!important;border-color:#56343d!important}
+html[data-theme="dark"] .facility-service-btn{background:#24161b!important;border-color:#56343d!important;color:#fff4f6!important}
+html[data-theme="dark"] .facility-service-btn b{color:#ff9fb2!important}html[data-theme="dark"] .facility-service-btn span{color:#d2b9bf!important}
+html[data-theme="dark"] .facility-service-btn:hover{background:#2f1b22!important;border-color:#8d5361!important;box-shadow:0 12px 28px rgba(0,0,0,.25)!important}
+html[data-theme="dark"] .facility-choice-modal .modal-close{background:#3a1c24!important;color:#ffbdc9!important;border:1px solid #6b3845!important}
+
+/* Partner facilities map: larger map, consistent single action */
+body.public-v3 .grid-map{grid-template-columns:minmax(300px,.55fr) minmax(0,1.45fr);gap:18px;align-items:stretch}
+body.public-v3 .grid-map>.glass-card:first-child{padding:18px}.map-card{display:flex;flex-direction:column;min-width:0;padding:18px!important}.map-frame{height:570px!important;min-height:570px;border-radius:16px!important}.map-card #mapCaption{margin:12px 2px 0}
+.facility-list{max-height:660px}.facility-actions{justify-content:flex-start}.facility-actions .primary-btn.mini{min-width:118px;text-align:center}
+.facility-card.clickable-facility{cursor:pointer}.facility-card.clickable-facility:hover{border-color:#d8a3ac}.facility-card.clickable-facility:focus-visible{outline:2px solid color-mix(in srgb,var(--bc-brand) 45%,transparent);outline-offset:2px}
+
+@media(max-width:1050px){body.public-v3 .grid-map{grid-template-columns:1fr}.map-card{order:-1}.map-frame{height:480px!important;min-height:480px}.facility-list{max-height:none}}
+@media(max-width:900px){.blood-online-summary{grid-template-columns:1fr!important}.blood-quick-search{grid-template-columns:1fr;border-left:0;border-top:1px solid var(--bc-border);padding-left:0;padding-top:18px}.blood-quick-search-fields{grid-template-columns:1fr 1fr}.blood-quick-search-btn{grid-column:1/-1}.home-blood-summary-bar{grid-template-columns:repeat(3,1fr)}.home-blood-summary-action{grid-column:1/-1}.home-blood-summary-stat:nth-child(3){border-right:0}}
+@media(max-width:700px){.home-blood-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.home-blood-summary-bar{grid-template-columns:1fr 1fr}.home-blood-summary-stat{border-bottom:1px solid var(--bc-border)}.home-blood-summary-stat:nth-child(2){border-right:0}.home-blood-summary-stat:nth-child(3){grid-column:1/-1;border-right:0}.home-blood-summary-action{grid-column:1/-1;align-items:flex-start;flex-direction:column}.blood-quick-search-fields{grid-template-columns:1fr}.blood-quick-search-btn{grid-column:auto}.map-frame{height:390px!important;min-height:390px}}
+
+
+/* ==========================================================
+   v22 — direct availability results, 45/55 map, clear CTAs
+   ========================================================== */
+/* Blood On-Lines quick search: prevent desktop overflow and keep controls readable. */
+.blood-online-summary{
+  grid-template-columns:minmax(190px,.46fr) minmax(0,1.54fr)!important;
+  overflow:hidden;
+}
+.blood-quick-search{
+  min-width:0;
+  grid-template-columns:1fr!important;
+  align-content:center;
+  gap:13px!important;
+}
+.blood-quick-search-copy{min-width:0}
+.blood-quick-search-fields{
+  min-width:0;
+  grid-template-columns:minmax(135px,.7fr) minmax(200px,1fr) minmax(165px,.72fr)!important;
+  gap:9px!important;
+}
+.blood-quick-search-fields label{min-width:0}
+.blood-quick-search-fields select{min-width:0;max-width:100%}
+.blood-quick-search-btn{
+  width:100%;
+  white-space:normal!important;
+  line-height:1.2;
+  padding-inline:12px!important;
+}
+/* When Blood On-Lines supplied a blood type, the Find Blood page immediately renders the result.
+   Keep the form available only as a convenient way to change the search. */
+.blood-search-card .search-prefilled{margin-bottom:18px}
+.blood-search-card .search-prefilled::before{
+  content:"Search another blood type";
+  display:block;
+  width:100%;
+  color:var(--bc-muted);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  margin-bottom:7px;
+}
+/* Homepage service actions are unmistakable buttons; no arrow decoration. */
+.home-service-card{color:var(--bc-text)!important;text-decoration:none!important}
+.home-service-cta{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  margin-top:auto;
+  padding:11px 14px;
+  min-height:42px;
+  border:1px solid var(--bc-brand);
+  border-radius:10px;
+  background:var(--bc-brand);
+  color:#fff!important;
+  font-size:12px;
+  font-weight:900;
+  text-decoration:none!important;
+  box-shadow:0 8px 18px rgba(127,29,29,.14);
+  transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+}
+.home-service-cta:hover,.home-service-cta:focus-visible{
+  background:#981b32;
+  transform:translateY(-1px);
+  box-shadow:0 12px 24px rgba(127,29,29,.22);
+  outline:none;
+}
+html[data-theme="dark"] .home-service-cta{background:#b92342;border-color:#d04d67;color:#fff!important}
+html[data-theme="dark"] .home-service-cta:hover{background:#d23152}
+/* Remove the old text-link treatment at the bottom of service cards. */
+.home-service-card>b{display:none!important}
+/* Donation Map desktop: 45% facility list / 55% map. */
+body.public-v3 .grid-map{
+  grid-template-columns:minmax(340px,45fr) minmax(0,55fr)!important;
+  gap:18px!important;
+}
+@media(max-width:1100px){
+  .blood-quick-search-fields{grid-template-columns:minmax(130px,.75fr) minmax(180px,1fr)!important}
+  .blood-quick-search-btn{grid-column:1/-1}
+}
+@media(max-width:1050px){body.public-v3 .grid-map{grid-template-columns:1fr!important}}
+@media(max-width:700px){
+  .blood-online-summary{grid-template-columns:1fr!important;overflow:visible}
+  .blood-quick-search-fields{grid-template-columns:1fr!important}
+  .blood-quick-search-btn{grid-column:auto}
+}

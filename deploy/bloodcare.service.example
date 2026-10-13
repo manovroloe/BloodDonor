@@ -1,0 +1,24 @@
+# Optional systemd service for a native Linux deployment (not needed with Docker).
+# Replace /opt/bloodcare and the bloodcare user/group with your installation.
+[Unit]
+Description=BloodCare website
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=bloodcare
+Group=bloodcare
+WorkingDirectory=/opt/bloodcare
+ExecStart=/opt/bloodcare/.venv/bin/python /opt/bloodcare/run.py
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

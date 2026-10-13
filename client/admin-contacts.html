@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#b91c1c">
+<title>BloodCare | Contact Messages</title><link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<script>(function(){try{var t=localStorage.getItem('bloodcare-theme');document.documentElement.dataset.theme=t||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}})();</script>
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/responsive.css"><link rel="stylesheet" href="css/theme.css">
+<script src="js/api.js"></script><script defer src="js/ui.js"></script><script type="module" src="js/app.js"></script>
+</head>
+<body data-staff="1" data-page="admin-contacts" data-admin="1">
+<div class="staff-layout">
+  <aside class="staff-side" id="managementSidebar"><div class="staff-brand"><img class="brand-logo-icon staff-brand-icon" src="images/favicon.svg" alt="" aria-hidden="true"><span>BloodCare</span></div><div class="empty dark-empty">Loading menu…</div></aside>
+  <main class="staff-main">
+    <div class="staff-head"><div><small>COMMUNICATIONS</small><h1>Messages</h1><p class="muted-text">Receive inquiries sent from the public Contact BloodCare form and reply to the sender by email.</p></div><button id="refreshContacts" class="secondary-btn" type="button">Refresh</button></div>
+    <section class="panel">
+      <div class="toolbar contact-admin-toolbar">
+        <input id="contactAdminSearch" type="search" placeholder="Search name, email, phone or message…" aria-label="Search contact messages">
+        <select id="contactAdminStatus" aria-label="Filter by status"><option value="">All statuses</option><option value="new">New</option><option value="read">Read</option><option value="replied">Replied</option><option value="resolved">Resolved</option></select>
+        <select id="contactAdminSender" aria-label="Filter by sender"><option value="">All senders</option><option value="user">Registered User</option><option value="visitor">Visitor</option></select>
+      </div>
+      <div id="contactEmailConfigNotice" class="stock-notice">Checking outgoing email configuration…</div>
+      <div class="table-wrap"><table><thead><tr><th>Sender</th><th>Inquiry</th><th>Message</th><th>Received</th><th>Status</th><th>Action</th></tr></thead><tbody id="contactMessageBody"><tr><td colspan="6">Loading messages…</td></tr></tbody></table></div>
+      <div id="contactAdminPagination" class="pagination"></div>
+    </section>
+  </main>
+</div>
+
+<div id="contactDetailModal" class="modal-backdrop" hidden>
+  <section class="modal-card contact-admin-modal" role="dialog" aria-modal="true" aria-labelledby="contactDetailTitle">
+    <button class="modal-close" type="button" data-close-modal aria-label="Close">×</button>
+    <div id="contactDetailContent"></div>
+  </section>
+</div>
+</body>
+</html>

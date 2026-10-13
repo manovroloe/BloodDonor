@@ -1,0 +1,6 @@
+# Example only: replace the hostname with your actual domain.
+# This assumes Caddy runs on the same host as the loopback-published website.
+bloodcare.example.com {
+    encode zstd gzip
+    reverse_proxy 127.0.0.1:8000
+}

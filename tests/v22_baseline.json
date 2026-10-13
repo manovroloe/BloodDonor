@@ -1,0 +1,128 @@
+{
+  "source": "BloodCareSystem_SearchFlowRefined_v22.zip",
+  "unchanged": {
+    "supabase/schema.sql": "b1d68726c07817cc50aee791e8d48edf820452869c62b64dfa3f77a173a0a31c",
+    "supabase/upgrade.sql": "d095c60024687477352cab20714f401cf48d9bb0532c237697f320df860876b5",
+    "client/css/style.css": "9dc314126da77dc9bc4441dbda31b054bb620a6a921608ca0e7bad4f0bfbadf3",
+    "client/css/login-desktop.css": "c27b0a084aeb25e48974e265a515ecf7f0fd3993bf299b942b3ec0ab2a5e2faf",
+    "client/css/theme.css": "d32b4f508f0d2c3db81a5cdc4d2c20c75c98e6e4cf05fed9a200952060d5bf46",
+    "client/css/responsive.css": "81e153d568089d88c1116b9563eaebbf64a8e439b32600996101a92d3bd4128f",
+    "client/images/background.jpg": "65da608f698ae280ff3f0467dae870ad34a68653fb8854ed423022bb159bcda6",
+    "client/images/favicon.svg": "1bda0febcbad1d20d909e5b52b4d649b716e1f0df50c7703bc73ec6cda74bb8e"
+  },
+  "html_normalized": {
+    "client/request-blood.html": "66b83c1256eddf6f4a955ea8a8a59c1d855a016cf1e06b2e42168ac36752837b",
+    "client/login.html": "a03ea179c0b2565900849fa1b1fd787134d2276b0efd5f9631ecf009518ecc8e",
+    "client/donor-registration.html": "d123bbb697462c1eeb130fe2cd7fcd693da6b4af4e182ad842f6a1fb6d753337",
+    "client/staff-inventory.html": "b5fd7684f483e55e086c3fc2c295a74d4a478d7d76993930b198a2a6b4ab894a",
+    "client/admin-facilities.html": "1382f18c9afc342ae829a5f9e3edf33a010be335ec2859693e1aa43a91b1cb4f",
+    "client/services.html": "e9a8c5a761698b90a0e748e008724fa2ccb0b3840b7720a3f300aafc78eb82f5",
+    "client/blood-onlines.html": "f75769ec21ae22e3220fd28508c4df4b167bd47472c3ad1dda3f362ad0ec5ff6",
+    "client/appointment.html": "d8d75c1c90852bc3b23a97b7fed659e18ec8a067c81068909ed9fd93bdb46f01",
+    "client/staff-reports.html": "911fdf5492bd75f23115912c063a985eb8a8f1e5868d3107bfd9998aae1b2b16",
+    "client/user.html": "6224bde844ed60588b160f3f494be9c29da8ad4833a4d050ee9a5a3b02da50cf",
+    "client/staff-requests.html": "15c5dcb9b27dd4426df6097bc8510a81b7bcaaf602d34947c9ed7aa597d79184",
+    "client/staff-donors.html": "31ac56227465d5f7bbf50a84d5f5e6d83a11de8c0c09b57ec7cc9e1c7c58a6c7",
+    "client/requests.html": "8eeea9185a4bcd46905337f49b312dc4459637488b0a33815674586a6cf146a9",
+    "client/admin.html": "3c44a30e04e5f225e25aae7a55a14db501b7432995fc59465c2d9ddc2a39e058",
+    "client/admin-contacts.html": "3afd4d1f28446899a90cc7bbd2e199be7cb711e2868a8aec10d9a619e4a29341",
+    "client/inventory.html": "84919f8f77bee05569e124613ab7cba09401f9ec7a8557c750f5a2f01e360e28",
+    "client/staff-appointments.html": "dd1c2a17cec5954c6b21a82d01c650a8877c12a6c75765ba0716bfacf9bb2ae5",
+    "client/map.html": "6ee5b49b03237d44179118195ce7e931b1909bba8f57c439ba3d71354581c639",
+    "client/profile.html": "aa7ede533edfa11953386b94e10983058ef786563e04848e482e3589243800e7",
+    "client/about.html": "64fb2ac92d29fae77a6994af0be27e7b2e768ea786172b0c661851bcef9566b9",
+    "client/admin-staff.html": "8b6e7e0142991821af7ce3904d97353cee4e8520231838adac5b02c3b2480319",
+    "client/donations.html": "7e51c16f2b9c40677f17753c4c01ff225743de22ff043ca71e3538f4a6696ae1",
+    "client/admin-audit.html": "079e78d095f6182a25a7ede748f792dd5085bdef999339fc1ec5f222fd0256c1",
+    "client/track-status.html": "46a029e8f5a6080b5114fc8365219c795f45fa6947f17909015ebb47e895c739",
+    "client/public-feeds.html": "359f50d75cfee43667b848a5d8c546506a3698629626a3e139984e5543ae5ab2",
+    "client/staff.html": "eccde669f7f522e6d69bde6790d1e2bab510463e03dc72e64947c0c7d2818a57",
+    "client/staff-content.html": "ae18c6d4afd14dc0450244d4823d919f956547a833f9c7d5a4579203767bf8d9",
+    "client/donation-records.html": "f20384318e56c28dc1ed0a7ad3a214af18f8359c3605aec4e6b6e436d3db52c8",
+    "client/index.html": "13089b5681481ad5d6783a29677f0d032d5aeddd2cfc3e5df478d7cb91633e4e",
+    "client/blood-search.html": "0eb83e3f03d8912d0abd36e6b7255ee9c77eba1b637bccd02ebdcb765df4bb67"
+  },
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/health"
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/sign-in"
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/sign-up"
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/refresh"
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/session"
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/sign-out"
+    },
+    {
+      "method": "GET",
+      "path": "/logout"
+    },
+    {
+      "method": "POST",
+      "path": "/logout"
+    },
+    {
+      "method": "GET",
+      "path": "/api/profile/ticket.pdf"
+    },
+    {
+      "method": "POST",
+      "path": "/api/contact"
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/config"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/staff"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/staff/{staff_id}/password"
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/contact/{contact_id}/reply"
+    },
+    {
+      "method": "POST",
+      "path": "/api/db"
+    },
+    {
+      "method": "POST",
+      "path": "/api/rpc/{function_name}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/storage/upload/{bucket}/{path:path}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/storage/{bucket}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/storage/public/{bucket}/{path:path}"
+    }
+  ],
+  "pdf_functions": {
+    "_profile_pdf_date": "f7bcdfff7a594db04c01c6ba3758cd46173b344bd215b955811f2161b7ab92e4",
+    "_profile_pdf_text": "bd61b7d181f6a71421294518ec30370348e1074be082dba551762c52c4a98336",
+    "build_profile_pdf": "e3b9106a2f59ae1d1b2e3ef003c4ebdea10538e0ef06b8c7eee3885012ac2dfb"
+  }
+}

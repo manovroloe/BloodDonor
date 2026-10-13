@@ -1,0 +1,1 @@
+"""BloodCare services package."""

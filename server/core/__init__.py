@@ -1,0 +1,1 @@
+"""BloodCare core package."""

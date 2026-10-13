@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#b91c1c">
+<title>BloodCare | Blood Donor Management System</title><link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<script>(function(){try{var t=localStorage.getItem('bloodcare-theme');document.documentElement.dataset.theme=t||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}})();</script><link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/theme.css">
+<script src="js/api.js"></script><script defer src="js/ui.js"></script><script type="module" src="js/app.js"></script>
+</head>
+<body class="public-v3 home-overview">
+<nav class="navbar v3-nav"><div class="nav-container"><a class="logo" href="index.html" aria-label="BloodCare home"><img class="brand-logo-icon" src="images/favicon.svg" alt="" aria-hidden="true"><span>BloodCare</span></a><ul class="nav-links"><li><a class="active" href="#home">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="blood-onlines.html">Blood OnLines</a></li><li><a href="public-feeds.html">Public Feeds</a></li><li><button class="nav-contact-link" type="button" data-contact-open>Contacts</button></li></ul><div class="nav-actions"><a class="profile-btn" href="profile.html" aria-label="Open donor profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm7 8a7 7 0 0 0-14 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Profile</span></a><button class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch theme"><svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.1A8.4 8.4 0 0 1 8.9 4a8.5 8.5 0 1 0 11.1 11.1Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></button><button class="menu-btn" type="button" aria-label="Open navigation" aria-expanded="false">☰</button></div></div></nav>
+<main>
+<section class="hero hero-v3" id="home">
+  <div class="hero-v3-shell">
+    <div class="hero-copy">
+      <span class="hero-kicker"><span class="pulse-dot"></span> Blood Donor Management System</span>
+      <h1>Give blood.<br><span>Keep hope beating.</span></h1>
+      <p>Register as a donor, request blood, schedule a donation, check availability, and follow your records through one connected and responsive system.</p>
+      <div class="hero-buttons hero-actions-v3">
+        <a href="donor-registration.html" class="btn-primary">Become a Donor <span>→</span></a>
+        <a href="blood-search.html" class="btn-secondary">Find Blood</a>
+      </div>
+      <div class="hero-trust"><span>✓ Donor tracking</span><span>✓ Staff-reviewed requests</span><span>✓ Live inventory view</span></div>
+      <div class="hero-info hero-metrics-v3">
+        <div><strong id="homeDonors">—</strong><span>Registered Donors</span></div>
+        <div><strong id="homeBags">—</strong><span>Available Bags</span></div>
+        <div><strong>24/7</strong><span>Online Access</span></div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-label="Large heart illustration representing blood donation">
+      <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+      <svg class="hero-heart-svg" viewBox="0 0 620 560" role="img" aria-label="Blood donation heart">
+        <defs>
+          <linearGradient id="heartGradient" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#ff4055"/><stop offset=".55" stop-color="#e11d48"/><stop offset="1" stop-color="#a90f2d"/></linearGradient>
+          <linearGradient id="dropGradient" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fb7185"/><stop offset="1" stop-color="#be123c"/></linearGradient>
+          <filter id="heartShadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#9f1239" flood-opacity=".22"/></filter>
+        </defs>
+        <circle cx="310" cy="278" r="230" fill="#fff" opacity=".74"/>
+        <circle cx="310" cy="278" r="190" fill="#fff1f2"/>
+        <path filter="url(#heartShadow)" d="M311 438C256 394 139 316 139 205c0-70 50-119 113-119 37 0 70 18 89 48 20-30 52-48 90-48 62 0 112 49 112 119 0 111-117 189-172 233l-30 24-30-24Z" fill="url(#heartGradient)"/>
+        <path d="M185 267h71l27-65 48 130 36-82 24 44h75" fill="none" stroke="#fff" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M500 410c0-24 25-52 25-52s25 28 25 52a25 25 0 1 1-50 0Z" fill="url(#dropGradient)"/>
+        <path d="M79 142c0-17 18-37 18-37s18 20 18 37a18 18 0 1 1-36 0Z" fill="#f43f5e" opacity=".8"/>
+        <circle cx="93" cy="388" r="9" fill="#fecdd3"/><circle cx="522" cy="170" r="12" fill="#fda4af"/><circle cx="487" cy="118" r="6" fill="#ffe4e6"/>
+      </svg>
+      <div class="hero-float hero-float-top"><span class="float-icon">♡</span><div><b>Ready to help?</b><small>Register in a few steps</small></div></div>
+      <div class="hero-float hero-float-bottom"><span class="float-icon blood-mini">●</span><div><b>Need blood?</b><small>Check stock before requesting</small></div></div>
+    </div>
+  </div>
+</section>
+<section class="section-block home-overview-section home-about-preview" id="about-preview"><div class="section-inner home-overview-two-col">
+  <div class="home-overview-copy"><span class="section-label">ABOUT BLOODCARE</span><h2>Connecting people, blood, and partner facilities.</h2><p>BloodCare brings donor services, blood requests, appointments, inventory visibility, staff, and partner facilities into one coordinated system.</p><a class="text-link home-overview-link" href="about.html">Learn More →</a></div>
+  <div class="home-about-values" aria-label="BloodCare mission vision and goal preview">
+    <article><span>01</span><h3>Mission</h3><p>Make blood-service coordination simpler and more accessible.</p></article>
+    <article><span>02</span><h3>Vision</h3><p>Build a connected and responsive blood-care community.</p></article>
+    <article><span>03</span><h3>Goal</h3><p>Improve access, traceability, and reliable coordination.</p></article>
+  </div>
+</div></section>
+<section class="section-block home-overview-section home-services-preview" id="services-preview"><div class="section-inner">
+  <div class="home-overview-heading"><div><span class="section-label">SERVICES</span><h2>What do you need today?</h2><p>Start a BloodCare service directly. The Services page explains every workflow in detail.</p></div><a class="text-link home-overview-link" href="services.html">View All Services →</a></div>
+  <div class="home-service-grid">
+    <article class="home-service-card home-service-request" data-symbol="＋"><div class="home-service-top"><span class="path-icon">＋</span><span class="home-service-kicker">REQUEST</span></div><h3>Request Blood</h3><p>Submit patient details and route the request to a facility with available stock.</p><div class="home-service-mini"><span>Blood type</span><span>Facility</span><span>Track</span></div><a class="home-service-cta" href="request-blood.html">Start Request</a></article>
+    <article class="home-service-card home-service-donate" data-symbol="♡"><div class="home-service-top"><span class="path-icon">♡</span><span class="home-service-kicker">DONOR JOURNEY</span></div><h3>Donate</h3><p>Complete the donor pre-screen, register, and continue to a facility appointment.</p><div class="home-service-mini"><span>Pre-screen</span><span>Register</span><span>Appointment</span></div><a class="home-service-cta" href="donor-registration.html">Become a Donor</a></article>
+    <article class="home-service-card home-service-search" data-symbol="⌕"><div class="home-service-top"><span class="path-icon">⌕</span><span class="home-service-kicker">LIVE AVAILABILITY</span></div><h3>Search Blood</h3><p>Check current availability before choosing a partner facility.</p><div class="home-service-blood-types"><span>A+</span><span>O+</span><span>B+</span><span>AB+</span></div><a class="home-service-cta" href="blood-search.html">Find Blood</a></article>
+    <article class="home-service-card home-service-appointment" data-symbol="◷"><div class="home-service-top"><span class="path-icon">◷</span><span class="home-service-kicker">SCHEDULE</span></div><h3>Appointment</h3><p>Schedule a donation visit at an active BloodCare partner facility.</p><div class="home-service-mini"><span>Facility</span><span>Date</span><span>Confirm</span></div><a class="home-service-cta" href="appointment.html">Book Appointment</a></article>
+  </div>
+</div></section>
+<section class="section-block home-overview-section home-blood-preview" id="blood-preview"><div class="section-inner">
+  <div class="home-overview-heading home-blood-heading"><div><span class="section-label">BLOOD ON-LINES</span><h2>Availability at a glance</h2><p>A quick snapshot of the current BloodCare network inventory.</p></div></div>
+  <div id="publicInventoryPreview" class="blood-grid home-blood-grid"><div class="empty">Loading inventory…</div></div>
+  <div class="home-blood-summary-bar">
+    <div class="home-blood-summary-stat"><strong id="homeInventoryTotal">—</strong><span>Available Bags</span></div>
+    <div class="home-blood-summary-stat"><strong id="homeFacilityCount">—</strong><span>Partner Facilities</span></div>
+    <div class="home-blood-summary-stat"><strong>Live</strong><span>Inventory Visibility</span></div>
+    <div class="home-blood-summary-action"><p>Find where blood is available and continue with the right partner facility.</p><a class="primary-btn" href="map.html">Find Partner Facilities →</a></div>
+  </div>
+</div></section>
+<section class="section-block home-overview-section home-facilities-preview" id="facilities-preview"><div class="section-inner">
+  <div class="home-overview-heading"><div><span class="section-label">PARTNER FACILITIES</span><h2>BloodCare near the community</h2><p>Featured active facilities with location and branch status. Click a facility to choose a BloodCare service.</p></div><a class="text-link home-overview-link" href="map.html">View All Facilities →</a></div>
+  <div id="homeFacilityPreview" class="home-facility-grid"><div class="empty">Loading partner facilities…</div></div>
+</div></section>
+<section class="section-block home-overview-section home-public-feeds" id="public-feeds-preview"><div class="section-inner">
+  <div class="home-overview-heading"><div><span class="section-label">PUBLIC FEEDS</span><h2>Latest Community Updates</h2><p>Only the three newest published posts are shown here.</p></div><a class="text-link home-overview-link" href="public-feeds.html">View More Feeds →</a></div>
+  <div id="homePublicFeed" class="grid-3 public-feed-grid"><div class="empty">Loading public feeds…</div></div>
+</div></section>
+</main>
+<footer class="site-footer" id="contact"><div class="footer-grid"><div><a class="footer-brand" href="index.html"><img class="brand-logo-icon" src="images/favicon.svg" alt="" aria-hidden="true"><span>BloodCare</span></a><p>A connected Blood Donor Management System for donor registration, appointments, blood requests, inventory visibility, public updates, facilities, and reports.</p></div><div><h4>Services</h4><p><a href="donor-registration.html">Donate Blood</a><br><a href="request-blood.html">Request Blood</a><br><a href="blood-search.html">Blood Type Search</a><br><a href="appointment.html">Book Appointment</a><br><a href="profile.html">My Profile</a></p></div><div><h4>Contact Information</h4><p>Blood Donation Center<br>Buenavista, Bohol<br>Phone: +63 900 000 0000<br>Email: bloodcare@example.com</p><button class="footer-contact-btn" type="button" data-contact-open>Open Contact Form</button></div></div><div class="footer-bottom"><span>© 2026 BloodCare. Final Project — Emerging Web Development Tools 2.</span></div></footer>
+</body></html>

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#b91c1c">
+  <title>BloodCare | Login</title><link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <script>(function(){try{var t=localStorage.getItem('bloodcare-theme');document.documentElement.dataset.theme=t||(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}})();</script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/login-desktop.css">
+  <script src="js/api.js"></script>
+  <script defer src="js/ui.js"></script>
+  <script type="module" src="js/app.js"></script>
+</head>
+<body class="login-page">
+  <main class="login-auth-shell" aria-label="BloodCare account access">
+    <section class="login-brand-panel" aria-label="BloodCare introduction">
+      <div class="login-brand-top">
+        <div class="login-brand-logo">
+          <img class="brand-logo-icon login-brand-icon" src="images/favicon.svg" alt="" aria-hidden="true">
+          <span>BloodCare</span>
+        </div>
+      </div>
+
+      <div class="login-brand-content">
+        <div class="login-eyebrow">Blood Donor Management System</div>
+        <h1>One account.<span>More lives reached.</span></h1>
+        <p>Access blood services, donor registration, appointment scheduling, requests, and your BloodCare profile from one secure place.</p>
+        <div class="login-impact-card" aria-label="BloodCare account benefits">
+          <div><strong>24/7</strong><span>Access to BloodCare services</span></div>
+          <div><strong>1</strong><span>Account for donors and recipients</span></div>
+          <div><strong>Safe</strong><span>Role-based staff and admin access</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="login-form-panel">
+      <div class="login-form-top login-form-top-theme-only">
+        <button class="login-theme-btn theme-toggle" type="button" aria-label="Switch color theme" title="Switch theme">
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.1A8.4 8.4 0 0 1 8.9 4a8.5 8.5 0 1 0 11.1 11.1Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+
+      <div class="login-form-wrap">
+        <div class="login-mobile-logo">
+          <img class="brand-logo-icon login-brand-icon" src="images/favicon.svg" alt="" aria-hidden="true">
+          BloodCare
+        </div>
+
+        <header class="login-form-heading">
+          <div class="login-copy" data-login-copy="login">
+            <div class="login-mini-label">Welcome back</div>
+            <h2>Log in to BloodCare</h2>
+            <p>Enter your account details to continue to your BloodCare services.</p>
+          </div>
+          <div class="login-copy" data-login-copy="signup" hidden>
+            <div class="login-mini-label">Create your account</div>
+            <h2>Join BloodCare</h2>
+            <p>Create a public BloodCare account. Donor registration can be completed after signing in.</p>
+          </div>
+        </header>
+
+        <div class="login-tabs" role="tablist" aria-label="Account access options">
+          <button class="login-tab active" type="button" data-auth-tab="login" role="tab" aria-selected="true">Log In</button>
+          <button class="login-tab" type="button" data-auth-tab="signup" role="tab" aria-selected="false">Create Account</button>
+        </div>
+
+        <form id="loginForm">
+          <div class="login-field">
+            <label for="loginEmail">Email / Gmail Address</label>
+            <input id="loginEmail" type="email" name="email" required autocomplete="email" placeholder="name@example.com">
+          </div>
+          <div class="login-field">
+            <label for="loginPassword">Password</label>
+            <div class="login-input-wrap password">
+              <input id="loginPassword" type="password" name="password" required autocomplete="current-password" placeholder="Enter your password">
+              <button class="login-password-toggle" type="button" data-login-password-toggle="loginPassword" aria-label="Show password" title="Show password">
+                <svg class="login-eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.6"/></svg>
+                <svg class="login-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18"/><path d="M10.7 6.1A10.4 10.4 0 0 1 12 6c6 0 9.5 6 9.5 6a15 15 0 0 1-2.1 3.1"/><path d="M6.6 6.6C4 8.3 2.5 12 2.5 12s3.5 6 9.5 6c1.5 0 2.8-.4 4-.9"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="login-helper-row">
+            <span class="login-secure-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3"/><rect x="5" y="10" width="14" height="11" rx="2"/></svg>Secure account session</span>
+            <button class="login-help-btn" type="button" data-contact-open>Need help?</button>
+          </div>
+          <button type="submit" class="login-submit">Log In</button>
+        </form>
+
+        <form id="signupForm" hidden>
+          <div class="login-field">
+            <label for="signupFullName">Full Name</label>
+            <input id="signupFullName" type="text" name="full_name" required maxlength="120" autocomplete="name" placeholder="Juan Dela Cruz">
+          </div>
+          <div class="login-field">
+            <label for="signupEmail">Email / Gmail Address</label>
+            <input id="signupEmail" type="email" name="email" required autocomplete="email" placeholder="name@example.com">
+          </div>
+          <div class="login-field">
+            <label for="signupPassword">Password</label>
+            <div class="login-input-wrap password">
+              <input id="signupPassword" type="password" name="password" required minlength="8" autocomplete="new-password" placeholder="At least 8 characters">
+              <button class="login-password-toggle" type="button" data-login-password-toggle="signupPassword" aria-label="Show password" title="Show password">
+                <svg class="login-eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.6"/></svg>
+                <svg class="login-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18"/><path d="M10.7 6.1A10.4 10.4 0 0 1 12 6c6 0 9.5 6 9.5 6a15 15 0 0 1-2.1 3.1"/><path d="M6.6 6.6C4 8.3 2.5 12 2.5 12s3.5 6 9.5 6c1.5 0 2.8-.4 4-.9"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>
+              </button>
+            </div>
+          </div>
+          <button type="submit" class="login-submit">Create BloodCare Account</button>
+        </form>
+        <div id="authMessage" class="login-note" role="status" aria-live="polite"></div>
+        <p class="login-fine-print"><a href="index.html">Back to public website</a></p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+  (()=>{
+    const tabs=[...document.querySelectorAll('[data-auth-tab]')];
+    const copies=[...document.querySelectorAll('[data-login-copy]')];
+    const syncCopy=mode=>{
+      copies.forEach(el=>el.hidden=el.dataset.loginCopy!==mode);
+      tabs.forEach(tab=>tab.setAttribute('aria-selected',tab.dataset.authTab===mode?'true':'false'));
+    };
+    tabs.forEach(tab=>tab.addEventListener('click',()=>syncCopy(tab.dataset.authTab)));
+    syncCopy('login');
+
+    document.querySelectorAll('[data-login-password-toggle]').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const input=document.getElementById(btn.dataset.loginPasswordToggle);
+        if(!input)return;
+        const show=input.type==='password';
+        input.type=show?'text':'password';
+        btn.setAttribute('aria-label',show?'Hide password':'Show password');
+        btn.setAttribute('title',show?'Hide password':'Show password');
+        btn.classList.toggle('is-visible',show);
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
